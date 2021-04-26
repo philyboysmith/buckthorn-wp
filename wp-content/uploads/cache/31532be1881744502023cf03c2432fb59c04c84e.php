@@ -10,8 +10,10 @@
                 <div class="flex flex-wrap">
                     <div class="w-full pl-6 border-l-4 border-blue">
 
-                        <?php the_content() ?>
+                        <div class="prose">
 
+                        <?php the_content() ?>
+                        </div>
                         <div class="md:flex">
                             <div class="w-full lg:w-7/12 mb-8 text-base lg:mr-12">
                                 <div class="mb-12">
@@ -31,7 +33,6 @@
                                 </div>
                                 <div class="bg-white p-6 mb-6">
                                     <h3 class="font-semibold mb-4"><?php echo e(get_field('sidebar_two')['title']); ?></h3>
-
                                     <img src="<?php echo e(get_field('sidebar_two')['graphic']); ?>" alt="Graph">
                                 </div>
 
@@ -46,8 +47,10 @@
                 <div class="mx-auto max-w-screen-2xl p-6 py-12 mb-12 md:text-lg bg-white-trans">
                 <div class="flex flex-wrap">
                     <div class="w-full pl-6 border-l-4 border-dgreen">
-                        <?php echo e(the_field('second_block')); ?>
+                        <div class="prose">
+                            <?php echo e(the_field('second_block')); ?>
 
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,8 +12,10 @@
                 <div class="flex flex-wrap">
                     <div class="w-full pl-6 border-l-4 border-blue">
 
-                        @php the_content() @endphp
+                        <div class="prose">
 
+                        @php the_content() @endphp
+                        </div>
                         <div class="md:flex">
                             <div class="w-full lg:w-7/12 mb-8 text-base lg:mr-12">
                                 <div class="mb-12">
@@ -46,7 +48,9 @@
                 <div class="mx-auto max-w-screen-2xl p-6 py-12 mb-12 md:text-lg bg-white-trans">
                 <div class="flex flex-wrap">
                     <div class="w-full pl-6 border-l-4 border-dgreen">
-                        {{ the_field('second_block')}}
+                        <div class="prose">
+                            {{ the_field('second_block')}}
+                        </div>
                     </div>
                 </div>
             </div>

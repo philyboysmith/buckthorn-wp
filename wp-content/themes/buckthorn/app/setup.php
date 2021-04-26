@@ -11,10 +11,11 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/main.css', '/dist/css/styles.css', false, null);
+    wp_enqueue_style('vendor', '/assets/dist/vendors.css', false, null);
+    wp_enqueue_style('sage/main.css', '/assets/dist/tailwind.css', false, null);
     wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Work+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap', false, null);
-    wp_enqueue_script( 'my-js', '/dist/js/custom-min.js', true );
-
+    wp_enqueue_script( 'magnifique', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.js', ['jquery'] );
+    wp_enqueue_script( 'my-js', '/assets/src/js/custom.js', ['jquery'] );
 }, 100);
 
 /**

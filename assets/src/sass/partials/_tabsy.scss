@@ -1,0 +1,183 @@
+
+//VARIABLES
+$basecolor1: white; // White
+$basecolor2: #000000; // Black - Text
+$basecolor3: #1D1D1B; // Grey - Text
+$basecolor4: #87C300;  // Green
+$basecolor5: #007653;  // D Green
+$basecolor6: #273885;  // Blue
+$basecolor7: #868686; // More Grey - Text
+$basecolor8: #EEF0EE; //More Grey Light - background
+
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+// Base Colors
+$tabActiveBgColor: #fff;
+$tabActiveTextColor: #5a5243;
+$tabNectiveBgColor: #5a5243;
+$tabNectiveTextColor: #F5F5F5;
+
+
+// Transition
+$transitionSpeed: 200ms;
+
+
+
+
+
+
+//MIXINS
+
+@mixin keyframes($animation-name) {
+
+    @-webkit-keyframes #{$animation-name} {
+
+        @content;
+
+    }
+
+    @keyframes #{$animation-name} {
+
+        @content;
+
+    }
+
+}
+
+// animation
+@mixin animation($args) {
+
+    -webkit-animation: #{$args};
+    animation: #{$args};
+
+}
+
+
+
+@include keyframes(showTab) {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// Library
+
+
+
+
+
+
+
+
+.tabsy {
+
+    > button {
+
+        width: 100%; font-family: inherit; font-size: 100%; margin: 0; outline: 0; border: 0;
+        vertical-align: baseline; box-sizing: border-box; background: transparent;
+
+    }
+
+    > .tabButton {
+
+        display: block;
+        transition: all $transitionSpeed ease-in-out;
+        color:$basecolor2;
+
+        .tabButton-inner {
+        background:$basecolor1;
+        display:block;
+        }
+
+    }
+
+    > input {
+
+        display: none;
+
+        & + label {
+            opacity:0.5;
+        }
+
+        &:checked + label {
+
+                color: $basecolor2;
+                opacity:1;
+
+                .tabButton-inner {
+                    background: $basecolor1;
+                }
+
+            & + .tab {
+
+                display: block;
+
+                > .content {
+
+                    @include animation(showTab $transitionSpeed ease-in-out);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    > .tab {
+
+         display: none;
+
+    }
+
+    @media screen and (min-width: $lg) {
+
+        display: flex; flex-wrap: wrap;
+
+        > .tabButton {
+
+            order: 1; align-items: flex-start; cursor: pointer;
+
+        }
+
+        > input {
+
+            &:checked + label {
+
+            }
+
+        }
+
+        > .tab {
+
+            order: 2;
+
+        }
+
+    }
+
+}

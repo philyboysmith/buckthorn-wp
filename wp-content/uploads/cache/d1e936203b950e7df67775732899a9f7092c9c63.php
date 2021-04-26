@@ -11,7 +11,9 @@
 
             <div class="flex flex-wrap mb-12">
                 <div class="w-full pl-6 border-l-4 border-dgreen">
-                    <?php the_content() ?>
+                    <div class="prose">
+                        <?php the_content() ?>
+                    </div>
                 </div>
             </div>
 

@@ -2,18 +2,18 @@
             <div class="flex justify-between ">
                 <div>
                     <a href="/">
-                        <img alt="Buckhorn Partners LLP" class="header-logo" src="/dist/assets/images/logo.svg"/>
+                        <img alt="Buckhorn Partners LLP" class="header-logo" src="/assets/images/logo.svg"/>
                     </a>
                 </div>
                 <div class="flex items-end lg:block header-contact text-right">
                     <div class="md:flex md:justify-end items-end md:mb-4">
-                        <a class="text-grey px-4 py-1 pr-8 mr-4 rounded-full hidden md:inline-block arrow-link document-rep-btn" href="">
+                        <a class="text-grey px-4 py-1 pr-8 mr-4 rounded-full hidden md:inline-block arrow-link document-rep-btn" href="/document-repository/">
                             Document Repository
                         </a>
                         <form action="/" class="flex relative search-form">
                             <input class="font-normal px-4 py-1 pr-10 rounded-full hidden lg:inline-block" placeholder="Search" type="text" name="s" >
                                 <button class="rounded-full lg:absolute search-button" type="submit">
-                                    <img alt="search" class="p-1" src="/dist/assets/images/icon-search.svg">
+                                    <img alt="search" class="p-1" src="/assets/images/icon-search.svg">
                                     </img>
                                 </button>
                             </input>

@@ -1,0 +1,20 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.12",
+    "sass": "^1.32.11",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vendor": "sass src/sass/styles.scss dist/vendors.css",
+    "tailwind": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,6 +1,6 @@
-<article <?php post_class() ?>>
+<article <?php post_class('w-full prose') ?>>
   <header>
-    <h2 class="entry-title"><a href="<?php echo e(get_permalink()); ?>"><?php echo get_the_title(); ?></a></h2>
+    <h3 class="entry-title"><a href="<?php echo e(get_permalink()); ?>"><?php echo get_the_title(); ?></a></h3>
 
   </header>
   <div class="entry-summary">

@@ -11,14 +11,6 @@
                         <div class="prose">
                             @php the_content() @endphp
                         </div>
-                        <h1 class="mb-4 font-serif text-4xl lg:text-5xl xl:text-6xl">
-                            Helping companies transform and grow into the Energy services businesses of the future.
-                        </h1>
-                        <div class="text-xl md:w-10/12 lg:text-xl text-grey">
-                            <p>
-                                We focus on integrating renewable energy, lowering emissions, increasing energy efficiency and other improvements to existing energy infrastructure.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@
                         </p>
                     </div>
                     <a href="">
-                        <img alt="LinkedIn" class="mb-1" src="/dist/assets/images/icon-linkedin.svg"/>
+                        <img alt="LinkedIn" class="mb-1" src="/assets/images/icon-linkedin.svg"/>
                     </a>
                 </div>
             </div>
