@@ -2,7 +2,12 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-  <main class="site-content bg-img bg-img-1">
+  <main class="site-content bg-basecolor8 text-grey text-base parallax-window" data-parallax="scroll" >
+    <picture class="parallax-slider">
+    <source media="(orientation: portrait)" srcset="/assets/images/backgrounds/bg-1s.jpg">
+    <source media="(orientation: landscape)" srcset="/assets/images/backgrounds/bg-1.jpg">
+        <img src="/assets/images/backgrounds/bg-1s.jpg" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+    </picture>
             <div class="white-opacity-strip">
             </div>
             <div class="mx-auto max-w-screen-2xl p-4 md:text-lg">

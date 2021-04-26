@@ -2,16 +2,21 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-  <main class="site-content bg-img bg-img-5 text-grey text-base">
+  <main class="site-content bg-basecolor8 text-grey text-base parallax-window" data-parallax="scroll" >
+    <picture class="parallax-slider">
+    <source media="(orientation: portrait)" srcset="/assets/images/backgrounds/bg-1s.jpg">
+    <source media="(orientation: landscape)" srcset="/assets/images/backgrounds/bg-1.jpg">
+        <img src="/assets/images/backgrounds/bg-1s.jpg" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+    </picture>
         <div class="white-opacity-strip mb-4 md:mb-12"></div>
-        <div class="mx-auto max-w-screen-2xl">
+        <div class="mx-auto max-w-screen-2xl w-full">
             <div class="p-6 md:py-12 m-4 mb-12 md:text-lg bg-white-trans">
                 <div class="lg:flex flex-wrap mb-12">
                     <div class="w-full">
                         <div class="lg:flex">
                             <div class="pl-6 lg:pr-12 mb-12 lg:mb-0 border-l-4 border-blue">
                                 <div class="lg:flex">
-                                    <div class="w-full lg:w-5/12">
+                                    <div class="w-full lg:w-5/12 pr-4">
                                         <h1 class="mb-4 font-serif text-4xl lg:text-5xl">Contact Us</h1>
                                         <div class="font-semibold">
                                             <p>Get in touch with Buckthorn Partners LLP</p>
@@ -30,13 +35,15 @@
                                                 <p>+44 (0)203 959 1070</p>
                                             </div>
                                             <div class="flex contact-icon contact-email">
-                                                <span></span>
-                                                <p>info@buckthornpartners.com</p>
+                                                <span class="flex-shrink-0"></span>
+                                                <p><a href="mailto:info@buckthornpartners.com" class="hover:text-green">info@buckthornpartners.com</a></p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="w-full mb-12 lg:mb-0 lg:w-7/12">
-                                        <div class="w-full"><img alt="" src="/assets/images/map-placeholder.jpg"></div>
+                                    <a href="{{ the_field('map')}}" target="_blank">
+                                        <div class="w-full"><img alt="" src="{{ the_field('map')}}" class="w-full"></div>
+</a>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-4/12">

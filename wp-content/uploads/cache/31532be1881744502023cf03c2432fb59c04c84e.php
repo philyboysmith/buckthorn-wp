@@ -1,7 +1,12 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
 
-    <main class="site-content bg-img bg-img-2 text-grey text-base">
+    <main class="site-content  text-grey text-base parallax-window" data-parallax="scroll" >
+    <picture class="parallax-slider">
+    <source media="(orientation: portrait)" srcset="/assets/images/backgrounds/bg-1s.jpg">
+    <source media="(orientation: landscape)" srcset="/assets/images/backgrounds/bg-1.jpg">
+        <img src="/assets/images/backgrounds/bg-1s.jpg" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+    </picture>
             <div class="white-opacity-strip mb-12">
             </div>
 
@@ -23,7 +28,7 @@
                             </div>
 
                             <div class="w-full lg:w-5/12 text-base">
-                                <div class="bg-white p-6 mb-6">
+                                <div class="bg-white p-6 mb-6 reveal">
                                   <h3 class="font-semibold mb-4"><?php echo e(the_field('sidebar_one')['title']); ?></h3>
                                   <div class="grid md:grid-cols-2 gap-4 text-white font-semibold">
                                       <?php $__currentLoopData = get_field('sidebar_one')['block']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -31,7 +36,7 @@
                                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                   </div>
                                 </div>
-                                <div class="bg-white p-6 mb-6">
+                                <div class="bg-white p-6 mb-6 reveal">
                                     <h3 class="font-semibold mb-4"><?php echo e(get_field('sidebar_two')['title']); ?></h3>
                                     <img src="<?php echo e(get_field('sidebar_two')['graphic']); ?>" alt="Graph">
                                 </div>

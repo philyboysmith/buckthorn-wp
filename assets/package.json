@@ -7,13 +7,15 @@
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.12",
     "sass": "^1.32.11",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "watch": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "vendor": "sass src/sass/styles.scss dist/vendors.css",
-    "tailwind": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css"
+    "tailwind": "tailwind build ./src/tailwind.css -o ./dist/tailwind.css",
+    "watch": "watch 'npm run tailwind' ./src"
   },
   "author": "",
   "license": "ISC"

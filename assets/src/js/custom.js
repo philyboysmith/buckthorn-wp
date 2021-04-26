@@ -7,8 +7,26 @@ $('.open-popup-link').magnificPopup({
   type:'inline',
     gallery:{
     enabled:true
+  },
+  showCloseBtn:false,
+  closeOnBgClick: false,
+  closeBtnInside: false,   // Custom settings, never mind
+  fixedContentPos: false,  // Custom settings, never mind
+  fixedBgPos: true,        // Custom settings, never mind
+
+  callbacks: {
+
+      open: function() {                        // When you open the
+          $('body').css('overflow', 'hidden');  // window, the element
+      },                                        // "body" is used "overflow: hidden".
+
+      close: function() {                       // When the window
+          $('body').css('overflow', '');        // is closed, the
+      },                                        // "overflow" gets the initial value.
+
   }
 });
+
 });
 
 
@@ -33,3 +51,11 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+jQuery(document).ready(function ($) {
+
+
+ScrollReveal().reveal('.reveal', {
+	interval: 100,
+});
+});

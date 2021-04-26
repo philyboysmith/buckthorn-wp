@@ -86,8 +86,8 @@ a:hover {
   content: "\002F";
   font-weight: 700;
   color: theme("colors.basecolor4");
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .border-blue {
@@ -337,8 +337,8 @@ a:hover {
   content: "\002F";
   font-weight: 700;
   color: theme("colors.basecolor1");
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .company-content .cta-lines:hover {
@@ -387,6 +387,7 @@ a:hover {
   border-top: 1px solid theme("colors.basecolor4");
 }
 
+
 .esg-table table tr > :nth-child(1) {
   width: auto;
   white-space: nowrap;
@@ -396,11 +397,11 @@ a:hover {
 }
 
 .team-thumb .team-thumb-content {
-  transition: background ease-in-out 0.3s;
+  transition: all ease-in-out 0.5s;
   background-position: right 30px center;
 }
 
-.team-thumb-content {
+.team-thumb:hover .team-thumb-content {
   background: theme("colors.basecolor6");
   color: theme("colors.basecolor1");
   background-image: url("/assets/images/arrow-right-white.svg");
@@ -826,14 +827,20 @@ input[name="main_menu"]:checked ~ section {
   background: theme("colors.basecolor1");
   opacity: 0.8;
 }
+.mfp-container {
+    overflow: auto;
+}
 
-.white-popup {
+.mfp-content {
   position: relative;
   background: #fff;
   width: auto;
   margin: 20px auto;
   max-width: 1500px;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+.our-team .mfp-content {
+    @apply max-w-lg;
 }
 
 .mfp-close {
@@ -846,7 +853,10 @@ input[name="main_menu"]:checked ~ section {
 .mfp-close:hover {
   filter: grayscale(0);
 }
-
+.mfp-arrow {
+    display: none!important;
+}
+/*
 .mfp-arrow-left {
   background: url("/assets/images/arrow-right.svg") no-repeat center center !important;
   transform: rotate(180deg);
@@ -860,7 +870,6 @@ input[name="main_menu"]:checked ~ section {
 
 .mfp-arrow-right {
   background: url("/assets/images/arrow-right.svg") no-repeat center center !important;
-
   opacity: 1;
   filter: grayscale(1);
 }
@@ -878,7 +887,7 @@ input[name="main_menu"]:checked ~ section {
 .mfp-arrow-right::after {
   display: none;
   content: "";
-}
+} */
 
 
 .prose table {
@@ -892,4 +901,39 @@ input[name="main_menu"]:checked ~ section {
 
 .prose td {
     @apply py-2 pr-2
+}
+@media (max-width: 768px) {
+    .prose td {
+        display: block;
+    }
+}
+
+.tabsy > input + label {
+    opacity: 0.7;
+    color: red;
+}
+
+.tabsy > .tabButton .tabButton-inner {
+    color: theme('colors.basecolor7');
+    background: linear-gradient(to bottom, #EEEEEE, #BBBCBD);
+}
+
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.jarallax > .jarallax-img img {
+    width: 100%;
+    object-fit: cover;
 }

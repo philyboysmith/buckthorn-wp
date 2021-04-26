@@ -16,9 +16,12 @@ module.exports = {
             basecolor6: '#273885',
             basecolor7: '#868686',
             basecolor8: '#EEF0EE',
+            teal: '#39869b',
             blue: '#273885',
             grey: '#1D1D1B',
             grey2: '#868686',
+            dgreen: '#007653',
+            green: '#87C300',
         }
     },
   },
