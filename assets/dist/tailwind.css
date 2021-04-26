@@ -32883,6 +32883,7 @@ input[name="main_menu"]:checked ~ section {
   background: #fff;
   width: auto;
   margin: 20px auto;
+  max-width: 1500px;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
 }
 

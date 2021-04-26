@@ -71,7 +71,7 @@
                         {{ the_sub_field('content')}}
                 </div>
 
-
+                @if (get_sub_field('numbers'))
                 <h3 class="text-xl lg:text-3xl mb-4 font-serif">By the numbers:</h3>
 
                 <div class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 text-center font-serif mb-4">
@@ -83,22 +83,35 @@
                     @endforeach
 
                 </div>
+                @endif
             </div>
 
+            @while ( have_rows('bottom_block') ) @php(the_row())
+                        @if( get_row_layout() == 'quotation' )
             <div class="md:flex bg-blue text-white p-6 md:p-0">
                 <div class="md:flex-grow border-l-4 border-white p-4 md:my-3 md:ml-4">
-                    <div class="text-xl font-semibold mb-6"><p>{{get_sub_field('quotation')['quotation']}}</p></div>
+                    <div class="text-xl font-semibold mb-6"><p>{{get_sub_field('quotation')}}</p></div>
                     <div class="font-semibold font-serif">
-                        <p class="leading-snug"><span class="text-3xl leading-none block">{{get_sub_field('quotation')['citation']}}</span>
-                        <span class="text-base font-normal">{{get_sub_field('quotation')['job_title']}}</span>
+                        <p class="leading-snug"><span class="text-3xl leading-none block">{{get_sub_field('citation')}}</span>
+                        <span class="text-base font-normal">{{get_sub_field('job_title')}}</span>
                         </p>
                    </div>
                 </div>
 
                 <div class="hidden md:block flex-none ">
-                    <img src="{{get_sub_field('quotation')['image']}}" alt="Allan">
+                    <img src="{{get_sub_field('image')}}" alt="Allan">
                 </div>
             </div>
+            @endif
+            @if( get_row_layout() == 'images' )
+
+            <div class="flex w-full p-6">
+                @foreach (get_sub_field('images') as $image)
+                            <img src="{{$image['image']}}" alt="" class="flex-1 w-1/3 border-2 border-white"/>
+                @endforeach
+            </div>
+            @endif
+            @endwhile
 
         </div>
 
