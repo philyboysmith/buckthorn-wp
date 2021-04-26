@@ -43,7 +43,7 @@ $colors = [
                         @while(have_rows('tabs')) @php( the_row())
                         <input type="radio" id="tab{{$i}}" name="tab" checked>
                         <label class="lg:w-1/3 text-4xl font-serif tabButton" for="tab{{$i}}">
-                            <span class="px-1 py-2 mt-2 lg:mt-0 md:mr-2 tabButton-inner"><span class="border-l-4 border-{{$colors[$i]}} pl-4 ml-1">{{ the_sub_field('title') }}</span>
+                            <span class="px-1 py-2 mt-2 lg:mt-0 @if($i !== 2) md:mr-2 @endif tabButton-inner"><span class="border-l-4 border-{{$colors[$i]}} pl-4 ml-1">{{ the_sub_field('title') }}</span>
                         </label>
                         @while ( have_rows('body') ) @php(the_row())
                         @if( get_row_layout() == 'full_width' )
