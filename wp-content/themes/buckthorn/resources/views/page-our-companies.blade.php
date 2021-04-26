@@ -119,6 +119,9 @@
            <div class="prose">
                {{ the_sub_field('secondary_content')}}
            </div>
+           @if(the_sub_field['website_url'])
+           <a href="{{the_sub_field['website_url']}}">{{ str_replace("https://", "", the_sub_field['website_url'])}}</a>
+           @endif
         </div>
 
 

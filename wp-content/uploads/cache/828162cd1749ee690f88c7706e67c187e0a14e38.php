@@ -119,6 +119,9 @@
                <?php echo e(the_sub_field('secondary_content')); ?>
 
            </div>
+           <?php if(the_sub_field['website_url']): ?>
+           <a href="<?php echo e(the_sub_field['website_url']); ?>"><?php echo e(str_replace("https://", "", the_sub_field['website_url'])); ?></a>
+           <?php endif; ?>
         </div>
 
 
