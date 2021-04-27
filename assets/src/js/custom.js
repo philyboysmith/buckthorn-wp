@@ -3,6 +3,7 @@
 
 jQuery(document).ready(function ($) {
 
+    $('body').addClass('loaded');
 $('.open-popup-link').magnificPopup({
   type:'inline',
     gallery:{

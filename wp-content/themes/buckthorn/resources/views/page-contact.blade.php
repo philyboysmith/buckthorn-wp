@@ -2,11 +2,11 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-  <main class="site-content bg-basecolor8 text-grey text-base parallax-window" data-parallax="scroll" >
+  <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
     <picture class="parallax-slider">
-    <source media="(orientation: portrait)" srcset="/assets/images/backgrounds/bg-1s.jpg">
-    <source media="(orientation: landscape)" srcset="/assets/images/backgrounds/bg-1.jpg">
-        <img src="/assets/images/backgrounds/bg-1s.jpg" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+    <source media="(orientation: landscape)" srcset="{{ the_field('desktop')}}">
+    <source media="(orientation: portrait)" srcset="{{ the_field('portrait')}}">
+        <img src="{{ the_field('desktop')}}" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
     </picture>
         <div class="white-opacity-strip mb-4 md:mb-12"></div>
         <div class="mx-auto max-w-screen-2xl w-full">
@@ -41,9 +41,9 @@
                                         </div>
                                     </div>
                                     <div class="w-full mb-12 lg:mb-0 lg:w-7/12">
-                                    <a href="{{ the_field('map')}}" target="_blank">
+                                    <a href="{{ the_field('map_link_url')}}" target="_blank">
                                         <div class="w-full"><img alt="" src="{{ the_field('map')}}" class="w-full"></div>
-</a>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-4/12">

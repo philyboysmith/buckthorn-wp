@@ -1,4 +1,5 @@
-<header class="m-auto w-full max-w-screen-2xl p-4 md:p-4">
+<header class=" p-4 md:p-4 sticky z-100 top-0 bg-white">
+<div class="m-auto w-full max-w-screen-2xl">
             <div class="flex justify-between ">
                 <div>
                     <a href="/">
@@ -41,5 +42,6 @@
                         </nav>
                     </div>
                 </div>
+            </div>
             </div>
         </header>
