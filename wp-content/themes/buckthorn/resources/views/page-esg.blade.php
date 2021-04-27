@@ -15,7 +15,7 @@ $colors = [
     <picture>
     <source media="(orientation: landscape)" srcset="{{ the_field('desktop')}}">
     <source media="(orientation: portrait)" srcset="{{ the_field('portrait')}}">
-        <img src="{{ the_field('desktop')}}" alt="" class="w-full h-full object-cover fixed  inset-0" style="z-index: -1000">
+        <img src="{{ the_field('desktop')}}" alt="" class="w-full h-full object-cover absolute md:fixed  inset-0" style="z-index: -1000">
     </picture>
     <div class="white-opacity-strip mb-4 md:mb-12">
     </div>
