@@ -21,7 +21,7 @@
                         </div>
                         <div class="md:flex">
                             <div class="w-full lg:w-7/12 mb-8 text-base lg:mr-12">
-                                <div class="mb-12">
+                                <div class="mb-4">
                                     <?php echo e(the_field('first_block_body')); ?>
 
                                 </div>
