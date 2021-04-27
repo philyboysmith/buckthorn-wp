@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-  <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
-    <picture class="parallax-slider">
+  <main class="site-content text-grey text-base"  >
+    <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
-        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed  inset-0" style="z-index: -1000">
     </picture>
             <div class="white-opacity-strip mb-4 md:mb-12">
             </div>
@@ -75,9 +75,9 @@
             </div>
             <?php while( have_rows('bottom_block') ): ?> <?php (the_row()); ?>
                         <?php if( get_row_layout() == 'quotation' ): ?>
-            <div class="md:flex asdasd bg-<?php echo e($col); ?> text-white p-6 md:p-0">
+            <div class="md:flex bg-<?php echo e($col); ?> text-white p-6 md:p-0">
                 <div class="md:flex-grow border-l-4 border-white p-4 md:my-3 md:ml-4">
-                    <div class="text-xl font-semibold mb-6"><p><?php echo e(get_sub_field('quotation')); ?></p></div>
+                    <div class=" mb-6"><p><?php echo e(get_sub_field('quotation')); ?></p></div>
                     <div class="font-semibold font-serif">
                         <p class="leading-snug"><span class="text-3xl leading-none block"><?php echo e(get_sub_field('citation')); ?></span>
                         <span class="text-base font-normal"><?php echo e(get_sub_field('job_title')); ?></span>
@@ -104,7 +104,7 @@
 
            </div>
            <?php if( get_sub_field('website_url') ): ?>
-           <a class="mt-auto py-8" href="<?php echo e(the_sub_field('website_url')); ?>"><?php echo e(str_replace("https://", "", get_sub_field('website_url'))); ?></a>
+           <a class="mt-auto pt-8" href="<?php echo e(the_sub_field('website_url')); ?>"><?php echo e(str_replace("https://", "", get_sub_field('website_url'))); ?></a>
            <?php endif; ?>
         </div>
 </div>

@@ -2,11 +2,11 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-  <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
-    <picture class="parallax-slider">
+  <main class="site-content text-grey text-base"  >
+    <picture>
     <source media="(orientation: landscape)" srcset="{{ the_field('desktop')}}">
     <source media="(orientation: portrait)" srcset="{{ the_field('portrait')}}">
-        <img src="{{ the_field('desktop')}}" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+        <img src="{{ the_field('desktop')}}" alt="" class="w-full h-full object-cover fixed  inset-0" style="z-index: -1000">
     </picture>
         <div class="white-opacity-strip mb-4 md:mb-12"></div>
         <div class="mx-auto max-w-screen-2xl">
