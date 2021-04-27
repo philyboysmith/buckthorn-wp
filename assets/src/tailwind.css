@@ -64,10 +64,16 @@ $xl: 1280px; */
   }
 }
 
+.prose ul {
+    @apply list-disc list-inside pl-0;
+}
+
 body {
   @apply antialiased;
 }
-
+main > picture::after {
+    content: ""
+}
 .site {
   display: flex;
   min-height: 100vh;

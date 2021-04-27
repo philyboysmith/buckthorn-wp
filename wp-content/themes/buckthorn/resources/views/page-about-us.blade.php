@@ -22,8 +22,8 @@
                         @php the_content() @endphp
                         </div>
                         <div class="md:flex">
-                            <div class="w-full lg:w-7/12 mb-8 lg:mb-0 text-base lg:mr-12">
-                                <div class="mb-4">
+                            <div class="w-full lg:w-7/12  text-base lg:mr-12">
+                                <div class="prose">
                                     {{ the_field('first_block_body')}}
                                 </div>
                             </div>

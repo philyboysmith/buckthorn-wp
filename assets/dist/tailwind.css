@@ -30857,9 +30857,19 @@ $xl: 1280px; */
   }
 }
 
+.prose ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding-left: 0px;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main > picture::after {
+  content: ""
 }
 
 .site {
