@@ -92,8 +92,22 @@
             <?php if( get_row_layout() == 'images' ): ?>
             <div class="flex w-full p-6">
                 <?php $__currentLoopData = get_sub_field('images'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <img src="<?php echo e($image['image']); ?>" alt="" class="flex-1 w-1/3 border-2 border-white"/>
+                    <img src="<?php echo e($image['image']); ?>" alt="" class="flex-1 w-1/3 border-2 border-white"/>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+            <?php endif; ?>
+            <?php if( get_row_layout() == 'video' ): ?>
+            <div class="md:flex bg-<?php echo e($col); ?> text-white md:p-0">
+                <div class="block md:w-1/3 ">
+                <a href="<?php echo e(get_sub_field('url')); ?>" class="mfp-iframe"><img src="<?php echo e(get_sub_field('thumbnail')); ?>" alt="" class="w-full"></a>
+                </div>
+                <div class="md:w-2/3 p-6">
+                    <div class="font-semibold border-r-1">
+
+                        <p class="leading-snug"><?php echo e(get_sub_field('text')); ?></p>
+                   </div>
+                </div>
+
             </div>
             <?php endif; ?>
             <?php endwhile; ?>
@@ -104,7 +118,7 @@
 
            </div>
            <?php if( get_sub_field('website_url') ): ?>
-           <a class="mt-auto pt-8" href="<?php echo e(the_sub_field('website_url')); ?>"><?php echo e(str_replace("https://", "", get_sub_field('website_url'))); ?></a>
+           <a class="mt-auto pt-8 font-semibold" href="<?php echo e(the_sub_field('website_url')); ?>"><?php echo e(str_replace("https://", "", get_sub_field('website_url'))); ?></a>
            <?php endif; ?>
         </div>
 </div>

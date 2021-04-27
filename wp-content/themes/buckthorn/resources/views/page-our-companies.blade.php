@@ -92,8 +92,22 @@
             @if( get_row_layout() == 'images' )
             <div class="flex w-full p-6">
                 @foreach (get_sub_field('images') as $image)
-                            <img src="{{$image['image']}}" alt="" class="flex-1 w-1/3 border-2 border-white"/>
+                    <img src="{{$image['image']}}" alt="" class="flex-1 w-1/3 border-2 border-white"/>
                 @endforeach
+            </div>
+            @endif
+            @if( get_row_layout() == 'video' )
+            <div class="md:flex bg-{{ $col }} text-white md:p-0">
+                <div class="block md:w-1/3 ">
+                <a href="{{get_sub_field('url')}}" class="mfp-iframe"><img src="{{get_sub_field('thumbnail')}}" alt="" class="w-full"></a>
+                </div>
+                <div class="md:w-2/3 p-6">
+                    <div class="font-semibold border-r-1">
+
+                        <p class="leading-snug">{{get_sub_field('text')}}</p>
+                   </div>
+                </div>
+
             </div>
             @endif
             @endwhile

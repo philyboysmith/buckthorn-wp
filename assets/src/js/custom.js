@@ -2,6 +2,12 @@
 // @codekit-prepend "../../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js";
 
 jQuery(document).ready(function ($) {
+    $('.mfp-iframe').magnificPopup({
+        type:'iframe',
+        midClick: true,
+        closeOnBgClick: true,
+
+      });
 
     $('body').addClass('loaded');
 $('.open-popup-link').magnificPopup({
@@ -10,7 +16,6 @@ $('.open-popup-link').magnificPopup({
     enabled:true
   },
   showCloseBtn:false,
-  closeOnBgClick: false,
   closeBtnInside: false,   // Custom settings, never mind
   fixedContentPos: false,  // Custom settings, never mind
   fixedBgPos: true,        // Custom settings, never mind
