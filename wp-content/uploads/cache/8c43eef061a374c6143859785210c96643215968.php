@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-    <main class="site-content bg-basecolor8 text-grey text-base parallax-window" data-parallax="scroll" >
+    <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
     <picture class="parallax-slider">
-    <source media="(orientation: portrait)" srcset="/assets/images/backgrounds/bg-1s.jpg">
-    <source media="(orientation: landscape)" srcset="/assets/images/backgrounds/bg-1.jpg">
-        <img src="/assets/images/backgrounds/bg-1s.jpg" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+    <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
+    <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
+        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
     </picture>
     <div class="white-opacity-strip">
             </div>
@@ -21,11 +21,11 @@
             <div class="bg-white-trans mt-auto">
                 <div class="m-auto max-w-screen-2xl p-4 pt-12 leading-snug ">
                     <div class="mb-2">
-                        <div class="w-full max-w-5xl md:flex ">
+                        <div class="w-full max-w-5xl md:flex homepage-block">
 
                         <?php while(have_rows('blocks')): ?> <?php (the_row()); ?>
 
-                            <div class="w-full md:flex md:w-1/3 mb-4 invisible reveal relative">
+                            <div class="w-full md:flex md:w-1/3 mb-4 relative">
                                 <a href="<?php echo e(get_sub_field('link')->post_name); ?>" class="absolute inset-0"></a>
                                 <div class="<?php if(get_sub_field('image') ): ?> flex <?php endif; ?> flex-1 bg-white pl-4 mr-4 border-l-4 border-<?php echo e(the_sub_field('colour')); ?>">
                                     <h3 class="flex-grow text-lg leading-snug font-medium  p-2 ">
