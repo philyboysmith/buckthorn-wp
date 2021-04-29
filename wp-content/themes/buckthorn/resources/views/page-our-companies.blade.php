@@ -90,9 +90,11 @@
             </div>
             @endif
             @if( get_row_layout() == 'images' )
-            <div class="flex w-full p-6">
+            <div class="flex w-full py-6 md:px-6">
                 @foreach (get_sub_field('images') as $image)
-                    <img src="{{$image['image']}}" alt="" class="flex-1 w-1/3 border-2 border-white"/>
+                <div class="flex-1 w-1/3">
+                    <img src="{{$image['image']}}" alt="" class="w-full border-2 border-white"/>
+                    </div>
                 @endforeach
             </div>
             @endif
