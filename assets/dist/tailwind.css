@@ -30838,6 +30838,12 @@ $xl: 1280px; */
   margin-bottom: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .doc-repo-link {
+    display: none
+  }
+}
+
 @media (min-width: 1024px) {
   .prose h2, .prose h1 {
     font-size: 3rem;

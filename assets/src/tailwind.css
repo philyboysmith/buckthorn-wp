@@ -47,6 +47,12 @@ $xl: 1280px; */
 .prose li {
   @apply mb-2;
 }
+
+@screen md {
+    .doc-repo-link {
+        @apply hidden
+    }
+}
 @screen lg {
   .prose h2,
   .prose h1 {

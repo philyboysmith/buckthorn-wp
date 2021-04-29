@@ -55,7 +55,7 @@
         <div class="w-full py-12 px-6 md:p-0 lg:w-7/12">
             <div class="pr-4 md:pt-12 md:pb-0 md:px-12">
                 <div class="mb-4">
-                    <img src="<?php echo e(get_sub_field('image')['popup']); ?>" alt="<?php echo e(the_sub_field('title')); ?>" />
+                    <img src="<?php echo e(get_sub_field('image')['popup']); ?>" alt="<?php echo e(the_sub_field('title')); ?>" class="h-16 md:h-auto w-auto"/>
                 </div>
                 <div class="prose">
                         <?php echo e(the_sub_field('body')); ?>
@@ -84,8 +84,8 @@
                         </p>
                    </div>
                 </div>
-                <div class="hidden md:block flex-none ">
-                    <img src="<?php echo e(get_sub_field('image')); ?>" alt="Allan" class="max-w-sm">
+                <div class="block flex-none ">
+                    <img src="<?php echo e(get_sub_field('image')); ?>" alt="Allan" class="max-w-sm w-full">
                 </div>
             </div>
             <?php endif; ?>

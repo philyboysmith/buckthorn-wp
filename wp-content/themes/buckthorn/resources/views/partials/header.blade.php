@@ -37,6 +37,7 @@
                         <nav class="menu font-bold uppercase text-grey block float-right lg:block lg:bg-none">
                             @if (has_nav_menu('primary_navigation'))
                                 {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+
                             @endif
 
                         </nav>

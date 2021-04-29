@@ -16,7 +16,7 @@
                             </br>
                         </p>
                     </div>
-                    <a href="">
+                    <a href="https://www.linkedin.com/company/buckthorn-partners/" target="_blank">
                         <img alt="LinkedIn" class="mb-1" src="/assets/images/icon-linkedin.svg"/>
                     </a>
                 </div>

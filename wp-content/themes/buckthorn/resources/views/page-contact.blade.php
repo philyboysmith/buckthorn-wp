@@ -17,26 +17,21 @@
                             <div class="pl-6 lg:pr-12 mb-12 lg:mb-0 border-l-4 border-blue">
                                 <div class="lg:flex">
                                     <div class="w-full lg:w-5/12 pr-4">
-                                        <h1 class="mb-4 font-serif text-4xl lg:text-5xl">Contact Us</h1>
-                                        <div class="font-semibold">
-                                            <p>Get in touch with Buckthorn Partners LLP</p>
+                                        <div class="prose">
+                                            {{ the_content() }}
                                         </div>
                                         <div class="w-full mb-6">
-                                            <p>Buckthorn Partners LLP</p>
                                             <div class="flex contact-icon contact-address">
                                                 <span></span>
-                                                <p>Princes House<br>
-                                                38 Jermyn Street<br>
-                                                London,<br>
-                                                SW1Y 6DN</p>
+                                                <p>{{ the_field('address')}}</p>
                                             </div>
                                             <div class="flex contact-icon contact-phone">
                                                 <span></span>
-                                                <p>+44 (0)203 959 1070</p>
+                                                <p>{{ the_field('phone_number')}}</p>
                                             </div>
                                             <div class="flex contact-icon contact-email">
                                                 <span class="flex-shrink-0"></span>
-                                                <p><a href="mailto:info@buckthornpartners.com" class="hover:text-green">info@buckthornpartners.com</a></p>
+                                                <p><a href="mailto:{{ the_field('email')}}" class="hover:text-green">{{ the_field('email')}}</a></p>
                                             </div>
                                         </div>
                                     </div>
