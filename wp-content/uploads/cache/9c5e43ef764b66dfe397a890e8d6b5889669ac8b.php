@@ -1,4 +1,4 @@
-<header class=" p-4 md:p-4 sticky z-100 top-0 bg-white">
+<header class=" p-4 md:p-4 sticky z-10 top-0 bg-white">
 <div class="m-auto w-full max-w-screen-2xl">
             <div class="flex justify-between ">
                 <div>
@@ -37,6 +37,7 @@
                         <nav class="menu font-bold uppercase text-grey block float-right lg:block lg:bg-none">
                             <?php if(has_nav_menu('primary_navigation')): ?>
                                 <?php echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']); ?>
+
 
                             <?php endif; ?>
 

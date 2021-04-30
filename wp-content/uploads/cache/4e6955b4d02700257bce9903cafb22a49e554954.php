@@ -20,8 +20,8 @@
                         <?php the_content() ?>
                         </div>
                         <div class="md:flex">
-                            <div class="w-full lg:w-7/12 mb-8 text-base lg:mr-12">
-                                <div class="mb-12">
+                            <div class="w-full lg:w-7/12  text-base lg:mr-12">
+                                <div class="prose">
                                     <?php echo e(the_field('first_block_body')); ?>
 
                                 </div>
@@ -29,8 +29,8 @@
 
                             <div class="w-full lg:w-5/12 text-base">
                                 <div class="bg-white p-6 mb-6 reveal">
-                                  <h3 class="font-semibold mb-4"><?php echo e(the_field('sidebar_one')['title']); ?></h3>
-                                  <div class="grid md:grid-cols-2 gap-4 text-white font-semibold">
+                                  <h3 class="font-semibold mb-4"><?php echo e(get_field('sidebar_one')['title']); ?></h3>
+                                  <div class="grid grid-cols-1 auto-rows-fr md:grid-cols-2 gap-4 text-white font-semibold">
                                       <?php $__currentLoopData = get_field('sidebar_one')['block']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                       <div class="flex items-center text-center p-4 bg-<?php echo e($row['colour']); ?>"><?php echo e($row['text']); ?></div>
                                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -8,11 +8,11 @@ $colors = [
 ?>
 <?php $__env->startSection('content'); ?>
 <?php while(have_posts()): ?> <?php the_post() ?>
-<main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
-    <picture class="parallax-slider">
+<main class="site-content text-grey text-base"  >
+    <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
-        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover absolute md:fixed  inset-0" style="z-index: -1000">
     </picture>
     <div class="white-opacity-strip mb-4 md:mb-12">
     </div>

@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-  <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
-    <picture class="parallax-slider">
+  <main class="site-content text-grey text-base"  >
+    <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
-        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed md:absolute inset-0" style="z-index: -1000">
+        <img src="<?php echo e(the_field('desktop')); ?>" alt="" class="w-full h-full object-cover fixed  inset-0" style="z-index: -1000">
     </picture>
         <div class="white-opacity-strip mb-4 md:mb-12"></div>
         <div class="mx-auto max-w-screen-2xl">
@@ -22,8 +22,8 @@
                             <div class="w-full lg:w-9/12">
                                 <div class="grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6">
                                 <?php while( have_rows('image') ): ?> <?php (the_row()); ?>
-                                    <div class="team-thumb bg-white group">
-                                        <a class="open-popup-link" href="#team-<?php echo e(sanitize_title(get_sub_field('name'))); ?>"><img alt="" src="<?php echo e(get_sub_field('headshot')); ?>">
+                                    <div class="team-thumb bg-white group overflow-hidden">
+                                        <a class="open-popup-link" href="#team-<?php echo e(sanitize_title(get_sub_field('name'))); ?>"><div class="overflow-hidden"><img alt="" src="<?php echo e(get_sub_field('headshot')); ?>" class="hover:scale-110 transform transition duration-400"></div>
                                         <div class="text-blue px-3 py-2 bg-white team-thumb-content">
                                             <div class="pl-3 border-l-2 leading-snug" style="border-color: currentColor">
                                                 <h3 class="font-serif text-lg leading-none mb-0 font-semibold"><?php echo e(get_sub_field('name')); ?></h3>
