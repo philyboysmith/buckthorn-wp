@@ -3,7 +3,7 @@
             <div class="flex justify-between ">
                 <div>
                     <a href="/">
-                        <img alt="Buckhorn Partners LLP" class="header-logo" src="/assets/images/logo.svg"/>
+                        <img alt="Buckhorn Partners LLP" class="header-logo" src="/assets/images/logo.png"/>
                     </a>
                 </div>
                 <div class="flex items-end lg:block header-contact text-right">

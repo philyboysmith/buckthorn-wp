@@ -28,12 +28,14 @@
                             <div class="w-full md:flex md:w-1/3 mb-4 relative">
                                 <a href="<?php echo e(get_sub_field('link')->post_name); ?>" class="absolute inset-0"></a>
                                 <div class="<?php if(get_sub_field('image') ): ?> flex <?php endif; ?> flex-1 bg-white pl-4 mr-4 border-l-4 border-<?php echo e(the_sub_field('colour')); ?>">
-                                    <h3 class="flex-grow text-lg leading-snug font-medium  p-2 ">
+                                    <h3 class="w-2/3 text-lg leading-snug font-medium  p-2 ">
                                         <?php echo e(the_sub_field('title')); ?>
 
                                     </h3>
                                     <?php if(get_sub_field('image') ): ?>
-                                    <img alt="<?php echo e(the_sub_field('title')); ?>" class="h-40 object-cover" src="<?php echo e(the_sub_field('image')); ?>">
+                                    <div class="w-1/3">
+                                    <img alt="<?php echo e(the_sub_field('title')); ?>" class="h-40 object-contain w-full object-bottom" src="<?php echo e(the_sub_field('image')); ?>">
+                                    </div>
                                     <?php endif; ?>
                                     <p class="px-2">
                                         <?php echo e(the_sub_field('body')); ?>

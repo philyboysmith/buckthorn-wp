@@ -44,28 +44,7 @@
                                 <div class="w-full lg:w-4/12">
                                     <h2 class="mb-3 font-serif font-semibold text-2xl lg:text-3xl">Get in touch</h2>
                                     <div class="form contact-form">
-                                        <form action="/my-handling-form-page" method="post">
-                                            <div class="w-full mb-2">
-                                                <input class="w-full p-2" id="name" name="name" placeholder="Full name" type="text">
-                                            </div>
-                                            <div class="w-full mb-2">
-                                                <input class="w-full p-2" id="mail" name="email" placeholder="Your email address" type="email">
-                                            </div>
-                                            <div class="w-full mb-2">
-                                                <textarea class="w-full p-2" id="msg" name="message" placeholder="Message..."></textarea>
-                                            </div>
-                                            <div class="flex w-full mb-2">
-                                                <div class="round">
-                                                    <input id="checkbox" type="checkbox"> <label for="checkbox"></label>
-                                                </div>
-                                                <div class="text-sm ml-6 mb-4">
-                                                    I’ve read the terms and conditions and Privacy statement consent to Buckthorn Partners holding my information.
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button type="submit">Submit &gt;</button>
-                                            </div>
-                                        </form>
+    {!! do_shortcode('[contact-form-7 id="400" title="Contact form"]') !!}
                                     </div>
                                 </div>
                             </div>

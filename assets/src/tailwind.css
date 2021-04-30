@@ -108,7 +108,7 @@ a:hover {
 .cta-lines:before {
   content: "\002F";
   font-weight: 700;
-  color: theme("colors.basecolor4");
+  color: white;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
@@ -364,17 +364,17 @@ a:hover {
   padding-right: 0.5em;
 }
 
-.company-content .cta-lines:hover {
+/* .company-content .cta-lines:hover {
   color: theme("colors.basecolor1");
-}
+} */
 
-.company-img:hover .cta-lines::after,
+/* .company-img:hover .cta-lines::after,
 .company-img:hover .cta-lines::before {
   color: theme("colors.basecolor4");
 }
 .company-img:hover .cta-lines::hover {
   color: theme("colors.basecolor1");
-}
+} */
 
 .esg-table table td {
   vertical-align: top;
@@ -466,7 +466,8 @@ a:hover {
   position: relative;
 }
 
-.form .round label {
+/* .form .round label, */
+.form .round .wpcf7-list-item-label {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -478,7 +479,8 @@ a:hover {
   width: 24px;
 }
 
-.form .round label:after {
+/* .form .round label:after, */
+.form .round .wpcf7-list-item-label::after {
   border: 2px solid #fff;
   border-top: none;
   border-right: none;
@@ -496,13 +498,15 @@ a:hover {
   visibility: hidden;
 }
 
-.form .round input[type="checkbox"]:checked + label {
+/* .form .round input[type="checkbox"]:checked + label, */
+.form .round input[type="checkbox"]:checked + .wpcf7-list-item-label {
   background-color: theme('colors.basecolor4');
   border-color: theme('colors.basecolor4');
 }
 
-.form .round input[type="checkbox"]:checked + label:after {
-  opacity: 1;
+/* .form .round input[type="checkbox"]:checked + label:after */
+.form .round input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+  opacity: 1!important;
 }
 
 .contact-form button {
@@ -863,7 +867,14 @@ input[name="main_menu"]:checked ~ section {
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
 }
 .our-team .mfp-content {
-    @apply max-w-lg;
+    width: 80%;
+    @apply max-w-sm;
+}
+
+@screen lg {
+    .our-team .mfp-content {
+        @apply max-w-lg
+    }
 }
 
 .mfp-close {

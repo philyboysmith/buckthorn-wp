@@ -90,9 +90,11 @@
             </div>
             <?php endif; ?>
             <?php if( get_row_layout() == 'images' ): ?>
-            <div class="flex w-full p-6">
+            <div class="flex w-full py-6 md:px-6">
                 <?php $__currentLoopData = get_sub_field('images'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="<?php echo e($image['image']); ?>" alt="" class="flex-1 w-1/3 border-2 border-white"/>
+                <div class="flex-1 w-1/3">
+                    <img src="<?php echo e($image['image']); ?>" alt="" class="w-full border-2 border-white"/>
+                    </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <?php endif; ?>
