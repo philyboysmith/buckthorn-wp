@@ -115,24 +115,3 @@ background-size: cover;
 }
 
 </style>
-
-<?php if($_COOKIE['buckthorn'] != '1') { ?>
-
-<style>
-#toggleCookies{
-	width: 3rem;
-height:3rem;
-background-image: url(/assets/circle.svg);
-background-size: cover;
-}
-</style>
-<?php  }  else { ?>
-<style>
-#toggleCookies{
-	width: 3rem;
-height: 3rem;
-background-image: url(/assets/check.svg);
-background-size: cover;
-}
-</style>
-<?php } ?>

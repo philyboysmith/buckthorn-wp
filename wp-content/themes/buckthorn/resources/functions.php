@@ -100,3 +100,11 @@ Container::getInstance()
         return $mimes;
         }
         add_filter( 'upload_mimes', 'my_custom_mime_types' );
+        function analytics_checkbox_function() {
+            if($_COOKIE['buckthorn'] == 1) {
+                return '<div class="form inline-block mr-4"><div class="round"><input id="analytics" type="checkbox" name="analytics" checked > <label for="analytics" class="wpcf7-list-item-label" id="toggleCookies"></label></div></div>';
+            } else {
+                return '<div class="form inline-block mr-4"><div class="round"><input id="analytics" type="checkbox" name="analytics"  > <label for="analytics" class="wpcf7-list-item-label" id="toggleCookies"></label></div></div>';
+            }
+       }
+        add_shortcode('analytics_checkbox', 'analytics_checkbox_function');
