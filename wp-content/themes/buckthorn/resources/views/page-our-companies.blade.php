@@ -26,7 +26,6 @@
                           <a  href="#company-{{$i}}-popup" class="open-popup-link  text-center p-6 flex items-end bg-white hover:text-white hover:bg-{{ the_sub_field('colour') }} company-img company-{{$i}} reveal">
                               <div class="company-content mx-auto text-sm">
                                 <p>{{ the_sub_field('description') }}</p>
-                                <div class="cta-lines py-2">Find out more</div>
                               </div>
 </a>
                           <style>

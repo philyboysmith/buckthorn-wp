@@ -25,7 +25,6 @@
                           <a  href="#company-<?php echo e($i); ?>-popup" class="open-popup-link  text-center p-6 flex items-end bg-white hover:text-white hover:bg-<?php echo e(the_sub_field('colour')); ?> company-img company-<?php echo e($i); ?> reveal">
                               <div class="company-content mx-auto text-sm">
                                 <p><?php echo e(the_sub_field('description')); ?></p>
-                                <div class="cta-lines py-2">Find out more</div>
                               </div>
 </a>
                           <style>
