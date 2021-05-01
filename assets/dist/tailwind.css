@@ -31850,6 +31850,18 @@ input[name="main_menu"]:checked ~ section {
   --tw-translate-y: 0px;
 }
 
+.mfp-iframe-holder .mfp-close {
+  background-size: cover;
+  cursor: pointer;
+  height: 1.5rem;
+  padding: 0px;
+  --tw-text-opacity: 1;
+  color: rgba(134, 134, 134, var(--tw-text-opacity));
+  width: 1.5rem;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/close.svg');
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -25,9 +25,9 @@
         <?php if($_COOKIE['buckthorn'] == null) { ?>
 
 <div id="newCookieNotice" class="fixed bottom-0 left-0 right-0 shadow-md bg-indigo-dark  z-20 py-6 bg-white text-" style="min-height: 60px" >
-	<div class="container p-3 md:flex">
+	<div class="container mx-auto p-3 md:flex">
             <div class="inner md:w-4/5 pr-4">
-			    <div>Our website uses necessary cookies in order for it to run. We would also like to use optional analytics cookies to improve the site, by collecting and reporting information on how you use it. These cookies do not directly identify the user. We won’t set optional cookies unless they are accepted. For more information on how our site cookies work, please see our <a class="underline" href="/cookie-policy">Cookie Policy</a>.</div>
+			    <div>Our website uses necessary cookies in order for it to run. We would also like to use optional analytics cookies to improve the site, by collecting and reporting information on how you use it. These cookies do not directly identify the user. We won’t set optional cookies unless they are accepted. For more information on how our site cookies work, please see our <a class="underline" href="/cookie-policy-and-control">Cookie Policy</a>.</div>
                 <div class="my-4 md:mb-0 form md:flex items-start" id="cookie-checkboxes ">
                     <div class="block mb-4 flex items-center outline-none round md:mr-16">
                     <input id="essential" type="checkbox" name="essential" checked disabled> <label for="checkbox" class="wpcf7-list-item-label opacity-50"></label> Essential Cookies

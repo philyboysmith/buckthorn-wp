@@ -998,3 +998,11 @@ input[name="main_menu"]:checked ~ section {
 .loaded .homepage-block > div{
     @apply opacity-100 translate-y-0;
 }
+
+.mfp-iframe-holder .mfp-close {
+    @apply text-basecolor7 h-6 w-6 p-0 bg-cover cursor-pointer;
+
+    background-repeat: no-repeat;
+
+    background-image: url('/assets/images/close.svg');
+}
