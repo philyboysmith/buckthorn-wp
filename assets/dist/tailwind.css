@@ -31279,6 +31279,11 @@ a:hover {
   width: 24px;
 }
 
+#newCookieNotice .form .round .wpcf7-list-item-label {
+  position: relative!important;
+  margin-right: 1rem;
+}
+
 /* .form .round label:after, */
 
 .form .round .wpcf7-list-item-label::after {

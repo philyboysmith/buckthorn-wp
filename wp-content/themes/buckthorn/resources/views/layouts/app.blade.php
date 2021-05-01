@@ -8,6 +8,7 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp
+<?php if($_COOKIE['buckthorn'] == '1') { ?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8G2CJPM9Q"></script>
 <script>
@@ -17,5 +18,6 @@
 
   gtag('config', 'G-L8G2CJPM9Q');
 </script>
+<?php } ?>
 </body>
 </html>
