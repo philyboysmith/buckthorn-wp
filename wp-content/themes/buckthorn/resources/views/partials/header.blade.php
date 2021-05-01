@@ -8,7 +8,7 @@
                 </div>
                 <div class="flex items-end lg:block header-contact text-right">
                     <div class="md:flex md:justify-end items-end md:mb-4">
-                        <a class="text-grey px-4 py-1 pr-8 mr-4 rounded-full hidden md:inline-block arrow-link document-rep-btn" href="/document-repository/">
+                        <a class="text-grey px-4 py-1 pr-8 mr-4 rounded-full hidden arrow-link document-rep-btn" href="/document-repository/">
                             Document Repository
                         </a>
                         <form action="/" class="flex relative search-form">
