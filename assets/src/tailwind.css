@@ -42,7 +42,7 @@ $xl: 1280px; */
 }
 
 .prose ul {
-  @apply list-disc list-outside text-base ml-6;
+  @apply list-disc list-outside  ml-6;
 }
 .prose li {
   @apply mb-2;

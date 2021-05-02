@@ -8,7 +8,7 @@ $colors = [
 ?>
 <?php $__env->startSection('content'); ?>
 <?php while(have_posts()): ?> <?php the_post() ?>
-<main class="site-content text-grey text-base"  >
+<main class="site-content text-grey text-lg"  >
     <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
@@ -35,10 +35,10 @@ $colors = [
                 <div class="w-full">
                     <?php ($i = 0); ?>
                     <!-- Tab links -->
-                    <div class="tabsy text-base">
+                    <div class="tabsy ">
 
                         <?php while(have_rows('tabs')): ?> <?php ( the_row()); ?>
-                        <input type="radio" id="tab<?php echo e($i); ?>" name="tab" checked>
+                        <input type="radio" id="tab<?php echo e($i); ?>" name="tab" <?php if($i == 0): ?> checked <?php endif; ?>>
                         <label class="lg:w-1/3 text-4xl font-serif tabButton" for="tab<?php echo e($i); ?>">
                             <span class="px-1 py-2 mt-2 lg:mt-0 <?php if($i !== 2): ?> md:mr-2 <?php endif; ?> tabButton-inner"><span class="border-l-4 border-<?php echo e($colors[$i]); ?> pl-4 ml-1"><?php echo e(the_sub_field('title')); ?></span>
                         </label>

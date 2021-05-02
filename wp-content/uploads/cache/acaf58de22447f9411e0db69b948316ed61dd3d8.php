@@ -1,4 +1,4 @@
-<footer class="w-full p-4 bg-white text-sm lg:text-sm text-grey2 uppercase xl:sticky bottom-0">
+<footer class="w-full p-4 bg-white text-sm lg:text-xs text-grey2 uppercase xl:sticky bottom-0">
             <div class="m-auto max-w-screen-2xl p-4 py-2 lg:flex justify-between items-center">
                 <div class=" sm:mb-4 lg:mb-0">
                     <p>
@@ -8,7 +8,7 @@
                     </p>
                 </div>
                 <div class=" lg:text-right flex xl:justify-end items-end">
-                    <div class="mr-2">
+                    <div class="mr-4">
                         <p class="mb-0">
                             COPYRIGHT BUCKTHORN PARTNERS LLP ©2021, ALL RIGHTS RESERVED.
                             <br>
@@ -24,7 +24,7 @@
         </footer>
         <?php if($_COOKIE['buckthorn'] == null) { ?>
 
-<div id="newCookieNotice" class="fixed bottom-0 left-0 right-0 shadow-md bg-indigo-dark  z-20 py-6 bg-white text-" style="min-height: 60px" >
+<div id="newCookieNotice" class="fixed bottom-0 left-0 right-0 shadow-md bg-indigo-dark  z-20 py-6 bg-white" style="min-height: 60px" >
 	<div class="container mx-auto p-3 md:flex">
             <div class="inner md:w-4/5 pr-4">
 			    <div>Our website uses necessary cookies in order for it to run. We would also like to use optional analytics cookies to improve the site, by collecting and reporting information on how you use it. These cookies do not directly identify the user. We won’t set optional cookies unless they are accepted. For more information on how our site cookies work, please see our <a class="underline" href="/cookie-policy-and-control">Cookie Policy</a>.</div>
@@ -38,9 +38,9 @@
                 </div>
             </div>
             <div class=" md:w-1/5">
-                <button class=" bg-brand hover:bg-blue hover:text-white  text-basecolor7 p-2 mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue" onClick="window.acceptAll()">Accept All</button>
-                <button class=" bg-brand hover:bg-blue hover:text-white  text-basecolor7 p-2  mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue" onClick="window.acceptSelected()">Accept Selected</button>
-                <button class="bg-brand hover:bg-blue hover:text-white  text-basecolor7 p-2  mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue"  onClick="window.location.href='https://google.com'">Reject</button>
+                <button class=" bg-brand hover:bg-blue hover:text-white  text-lgcolor7 p-2 mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue" onClick="window.acceptAll()">Accept All</button>
+                <button class=" bg-brand hover:bg-blue hover:text-white  text-lgcolor7 p-2  mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue" onClick="window.acceptSelected()">Accept Selected</button>
+                <button class="bg-brand hover:bg-blue hover:text-white  text-lgcolor7 p-2  mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue"  onClick="window.location.href='https://google.com'">Reject</button>
             </div>
 		</div>
 	</div>

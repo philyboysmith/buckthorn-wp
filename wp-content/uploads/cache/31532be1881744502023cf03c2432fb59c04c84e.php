@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
 
-  <main class="site-content text-grey text-base parallax-window" data-parallax="scroll" >
+  <main class="site-content text-grey text-lg parallax-window" data-parallax="scroll" >
     <picture class="parallax-slider">
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
@@ -20,14 +20,14 @@
                         <?php the_content() ?>
                         </div>
                         <div class="md:flex">
-                            <div class="w-full lg:w-7/12  text-base lg:mr-12">
+                            <div class="w-full lg:w-7/12  text-lg lg:mr-12">
                                 <div class="prose">
                                     <?php echo e(the_field('first_block_body')); ?>
 
                                 </div>
                             </div>
 
-                            <div class="w-full lg:w-5/12 text-base">
+                            <div class="w-full lg:w-5/12 text-lg">
                                 <div class="bg-white p-6 mb-6 reveal">
                                   <h3 class="font-semibold mb-4"><?php echo e(get_field('sidebar_one')['title']); ?></h3>
                                   <div class="grid grid-cols-1 auto-rows-fr md:grid-cols-2 gap-4 text-white font-semibold">

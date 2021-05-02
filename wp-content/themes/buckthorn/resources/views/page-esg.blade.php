@@ -11,7 +11,7 @@ $colors = [
 @endphp
 @section('content')
 @while(have_posts()) @php the_post() @endphp
-<main class="site-content text-grey text-base"  >
+<main class="site-content text-grey text-lg"  >
     <picture>
     <source media="(orientation: landscape)" srcset="{{ the_field('desktop')}}">
     <source media="(orientation: portrait)" srcset="{{ the_field('portrait')}}">
@@ -38,10 +38,10 @@ $colors = [
                 <div class="w-full">
                     @php ($i = 0)
                     <!-- Tab links -->
-                    <div class="tabsy text-base">
+                    <div class="tabsy ">
 
                         @while(have_rows('tabs')) @php( the_row())
-                        <input type="radio" id="tab{{$i}}" name="tab" checked>
+                        <input type="radio" id="tab{{$i}}" name="tab" @if ($i == 0) checked @endif>
                         <label class="lg:w-1/3 text-4xl font-serif tabButton" for="tab{{$i}}">
                             <span class="px-1 py-2 mt-2 lg:mt-0 @if($i !== 2) md:mr-2 @endif tabButton-inner"><span class="border-l-4 border-{{$colors[$i]}} pl-4 ml-1">{{ the_sub_field('title') }}</span>
                         </label>

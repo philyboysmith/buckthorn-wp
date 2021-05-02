@@ -30827,8 +30827,6 @@ $xl: 1280px; */
 }
 
 .prose ul {
-  font-size: 1rem;
-  line-height: 1.5rem;
   list-style-position: outside;
   list-style-type: disc;
   margin-left: 1.5rem;
