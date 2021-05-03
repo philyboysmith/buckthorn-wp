@@ -127,4 +127,16 @@
 
         </main>
   @endwhile
+
+
+ <script>
+        var h = location.hash;
+        console.log(h);
+        jQuery(document).ready(function ($) {
+            if (h) {
+                jQuery("a[href='" + h +"']").click();
+            }
+        });
+     </script>
+
 @endsection

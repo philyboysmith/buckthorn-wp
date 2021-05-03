@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-    <main class="site-content text-grey text-base"  >
+    <main class="site-content text-grey text-lg"  >
     <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
@@ -26,7 +26,7 @@
                         <?php while(have_rows('blocks')): ?> <?php (the_row()); ?>
 
                             <div class="w-full md:flex md:w-1/3 mb-4 relative">
-                                <a href="<?php echo e(get_sub_field('link')->post_name); ?>" class="absolute inset-0"></a>
+                                <a href="<?php echo e(get_sub_field('link')); ?>" class="absolute inset-0"></a>
                                 <div class="<?php if(get_sub_field('image') ): ?> flex <?php endif; ?> flex-1 bg-white pl-4 mr-4 border-l-4 border-<?php echo e(the_sub_field('colour')); ?>">
                                     <h3 class="w-2/3 text-lg leading-snug font-medium  p-2 ">
                                         <?php echo e(the_sub_field('title')); ?>
@@ -43,9 +43,9 @@
                                     </p>
                                     <?php if(!get_sub_field('image') ): ?>
                                     <div class=" px-2 pb-2 flex items-center">
-                                        <a class="arrow-link font-bold text-grey pr-3" href="">
+                                        <span class="arrow-link font-bold text-grey pr-3" >
                                             Find out how
-                                        </a>
+                                        </span>
                                     </div>
                                     <?php endif; ?>
 
