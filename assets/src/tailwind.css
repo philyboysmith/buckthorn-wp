@@ -661,7 +661,8 @@ nav ul li {
     color: theme("colors.basecolor7");
   }
 
-  nav ul li a:after {
+  nav ul li a:after,
+  .footer-item::after{
     content: "\002F";
     color: theme("colors.basecolor4");
     padding-left: 12px;
