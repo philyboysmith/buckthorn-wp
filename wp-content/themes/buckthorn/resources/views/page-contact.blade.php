@@ -44,7 +44,7 @@
                                 <div class="w-full lg:w-4/12">
                                     <h2 class="mb-3 font-serif font-semibold text-2xl lg:text-3xl">Get in touch</h2>
                                     <div class="form contact-form">
-    {!! do_shortcode('[contact-form-7 id="400" title="Contact form"]') !!}
+                    {!! do_shortcode('[contact-form-7 id="400" title="Contact form"]') !!}
                                     </div>
                                 </div>
                             </div>
