@@ -28,7 +28,7 @@
                         @while(have_rows('blocks')) @php(the_row())
 
                             <div class="w-full md:flex md:w-1/3 mb-4 relative">
-                                <a href="{{get_sub_field('link')->post_name}}" class="absolute inset-0"></a>
+                                <a href="{{get_sub_field('link')}}" class="absolute inset-0"></a>
                                 <div class="@if(get_sub_field('image') ) flex @endif flex-1 bg-white pl-4 mr-4 border-l-4 border-{{ the_sub_field('colour') }}">
                                     <h3 class="w-2/3 text-lg leading-snug font-medium  p-2 ">
                                         {{ the_sub_field('title') }}
@@ -43,9 +43,9 @@
                                     </p>
                                     @if(!get_sub_field('image') )
                                     <div class=" px-2 pb-2 flex items-center">
-                                        <a class="arrow-link font-bold text-grey pr-3" href="">
+                                        <span class="arrow-link font-bold text-grey pr-3" >
                                             Find out how
-                                        </a>
+                                        </span>
                                     </div>
                                     @endif
 
