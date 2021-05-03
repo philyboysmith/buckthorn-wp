@@ -31482,7 +31482,8 @@ nav ul li {
     color: #868686;
   }
 
-  nav ul li a:after {
+  nav ul li a:after,
+  .footer-item::after{
     content: "\002F";
     color: #87C300;
     padding-left: 12px;
