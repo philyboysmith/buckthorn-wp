@@ -1,3 +1,38 @@
+<?php
+
+$query = $_GET['s'];
+
+$team = get_field('image', 14);
+$company = get_field('company', 10);
+
+$extra_results = [];
+foreach ($team as $key => $p) {
+
+
+    $name = $p['name'];
+    similar_text(strtolower($name), strtolower($query), $perc);
+    if($perc > 50){
+        $extra_results[] = [
+            'title' => $p['name'],
+            'blurb' => $p['biog'],
+            'url' => '/our-team#team-' . sanitize_title($p['name'])
+        ];
+    }
+}
+
+foreach ($company as $key => $p) {
+    $name = $p['title'];
+    similar_text(strtolower($name), strtolower($query), $perc);
+    if($perc > 50){
+        $extra_results[] = [
+            'title' => $name,
+            'blurb' => $p['description'],
+            'url' => '/our-companies#company-' . ($key + 1) . '-popup'
+        ];
+    }
+}
+?>
+
 <?php $__env->startSection('content'); ?>
   <main class="site-content bg-img bg-img-1">
             <div class="white-opacity-strip">
@@ -8,7 +43,7 @@
                         <h1 class="mb-4 font-serif text-4xl lg:text-5xl xl:text-6xl">
                             Search results
                         </h1>
-                        <?php if(!have_posts()): ?>
+                        <?php if(!have_posts() && count($extra_results) === 0 ): ?>
                             <div class="alert alert-warning">
                             <?php echo e(__('Sorry, no results were found.', 'sage')); ?>
 
@@ -16,6 +51,22 @@
                             <?php echo get_search_form(false); ?>
 
                         <?php endif; ?>
+
+                        <?php $__currentLoopData = $extra_results; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $result): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <article class="w-full prose">
+                        <header>
+                            <h3 class="entry-title"><a href="<?php echo e($result['url']); ?>"><?php echo e($result['title']); ?></a></h3>
+
+                        </header>
+                        <div class="entry-summary">
+                        <?php echo e($result['blurb']); ?>
+
+                        </div>
+                        </article>
+
+
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                         <?php while(have_posts()): ?> <?php the_post() ?>
                             <?php echo $__env->make('partials.content-search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
