@@ -1,4 +1,4 @@
-<article @php post_class('w-full prose') @endphp>
+<article @php post_class('w-full prose  mb-8') @endphp>
   <header>
     <h3 class="entry-title"><a href="{{ get_permalink() }}">{!! get_the_title() !!}</a></h3>
 
