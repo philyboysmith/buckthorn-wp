@@ -54,13 +54,13 @@ foreach ($company as $key => $p) {
 
                         @foreach ($extra_results as $result)
 
-                        <article class="w-full prose">
+                        <article class="w-full prose mb-8">
                         <header>
                             <h3 class="entry-title"><a href="{{ $result['url'] }}">{{ $result['title'] }}</a></h3>
 
                         </header>
                         <div class="entry-summary">
-                        {{ $result['blurb'] }}
+                        <p>{{ $result['blurb'] }}</p>
                         </div>
                         </article>
 
