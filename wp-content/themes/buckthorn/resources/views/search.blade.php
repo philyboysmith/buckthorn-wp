@@ -1,5 +1,40 @@
 @extends('layouts.app')
 
+@php
+
+$query = $_GET['s'];
+
+$team = get_field('image', 14);
+$company = get_field('company', 10);
+
+$extra_results = [];
+foreach ($team as $key => $p) {
+
+
+    $name = $p['name'];
+    similar_text(strtolower($name), strtolower($query), $perc);
+    if($perc > 50){
+        $extra_results[] = [
+            'title' => $p['name'],
+            'blurb' => $p['biog'],
+            'url' => '/our-team#team-' . sanitize_title($p['name'])
+        ];
+    }
+}
+
+foreach ($company as $key => $p) {
+    $name = $p['title'];
+    similar_text(strtolower($name), strtolower($query), $perc);
+    if($perc > 50){
+        $extra_results[] = [
+            'title' => $name,
+            'blurb' => $p['description'],
+            'url' => '/our-companies#company-' . ($key + 1) . '-popup'
+        ];
+    }
+}
+@endphp
+
 @section('content')
   <main class="site-content bg-img bg-img-1">
             <div class="white-opacity-strip">
@@ -10,12 +45,27 @@
                         <h1 class="mb-4 font-serif text-4xl lg:text-5xl xl:text-6xl">
                             Search results
                         </h1>
-                        @if (!have_posts())
+                        @if (!have_posts() && count($extra_results) === 0 )
                             <div class="alert alert-warning">
                             {{ __('Sorry, no results were found.', 'sage') }}
                             </div>
                             {!! get_search_form(false) !!}
                         @endif
+
+                        @foreach ($extra_results as $result)
+
+                        <article class="w-full prose">
+                        <header>
+                            <h3 class="entry-title"><a href="{{ $result['url'] }}">{{ $result['title'] }}</a></h3>
+
+                        </header>
+                        <div class="entry-summary">
+                        {{ $result['blurb'] }}
+                        </div>
+                        </article>
+
+
+                        @endforeach
 
                         @while(have_posts()) @php the_post() @endphp
                             @include('partials.content-search')
