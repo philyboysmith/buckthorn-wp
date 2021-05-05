@@ -13,7 +13,9 @@ foreach ($team as $key => $p) {
 
     $name = $p['name'];
     similar_text(strtolower($name), strtolower($query), $perc);
-    if($perc > 50){
+    $array = explode(' ', strtolower($name));
+
+    if($perc > 50 || in_array(strtolower($query), $array)){
         $extra_results[] = [
             'title' => $p['name'],
             'blurb' => $p['biog'],
