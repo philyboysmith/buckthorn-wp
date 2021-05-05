@@ -19,7 +19,8 @@ foreach ($team as $key => $p) {
         $extra_results[] = [
             'title' => $p['name'],
             'blurb' => $p['biog'],
-            'url' => '/our-team#team-' . sanitize_title($p['name'])
+            'url' => '/our-team#team-' . sanitize_title($p['name']),
+            'sort' => $perc
         ];
     }
 }
@@ -31,10 +32,19 @@ foreach ($company as $key => $p) {
         $extra_results[] = [
             'title' => $name,
             'blurb' => $p['description'],
-            'url' => '/our-companies#company-' . ($key + 1) . '-popup'
+            'url' => '/our-companies#company-' . ($key + 1) . '-popup',
+            'sort' => 100
         ];
     }
 }
+
+function cmp($a, $b)
+{
+    return strcmp($b["sort"], $a["sort"]);
+}
+
+usort($extra_results, "cmp");
+
 @endphp
 
 @section('content')
