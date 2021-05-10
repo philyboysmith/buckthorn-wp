@@ -11,11 +11,14 @@ foreach ($team as $key => $p) {
 
     $name = $p['name'];
     similar_text(strtolower($name), strtolower($query), $perc);
-    if($perc > 50){
+    $array = explode(' ', strtolower($name));
+
+    if($perc > 50 || in_array(strtolower($query), $array)){
         $extra_results[] = [
             'title' => $p['name'],
             'blurb' => $p['biog'],
-            'url' => '/our-team#team-' . sanitize_title($p['name'])
+            'url' => '/our-team#team-' . sanitize_title($p['name']),
+            'sort' => $perc
         ];
     }
 }
@@ -27,10 +30,19 @@ foreach ($company as $key => $p) {
         $extra_results[] = [
             'title' => $name,
             'blurb' => $p['description'],
-            'url' => '/our-companies#company-' . ($key + 1) . '-popup'
+            'url' => '/our-companies#company-' . ($key + 1) . '-popup',
+            'sort' => 100
         ];
     }
 }
+
+function cmp($a, $b)
+{
+    return strcmp($b["sort"], $a["sort"]);
+}
+
+usort($extra_results, "cmp");
+
 ?>
 
 <?php $__env->startSection('content'); ?>
@@ -54,14 +66,13 @@ foreach ($company as $key => $p) {
 
                         <?php $__currentLoopData = $extra_results; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $result): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-                        <article class="w-full prose">
+                        <article class="w-full prose mb-8">
                         <header>
                             <h3 class="entry-title"><a href="<?php echo e($result['url']); ?>"><?php echo e($result['title']); ?></a></h3>
 
                         </header>
                         <div class="entry-summary">
-                        <?php echo e($result['blurb']); ?>
-
+                        <p><?php echo e($result['blurb']); ?></p>
                         </div>
                         </article>
 

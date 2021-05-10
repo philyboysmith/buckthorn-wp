@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-  <main class="site-content text-grey text-base"  >
+  <main class="site-content text-grey text-lg"  >
     <picture>
     <source media="(orientation: landscape)" srcset="<?php echo e(the_field('desktop')); ?>">
     <source media="(orientation: portrait)" srcset="<?php echo e(the_field('portrait')); ?>">
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="lg:flex items-start">
-                            <div class="w-full text-base lg:w-7/12 mb-12 lg:mb-0 lg:pr-24">
+                            <div class="w-full text-lg lg:w-7/12 mb-12 lg:mb-0 lg:pr-24">
                                 <div class="w-full flex justify-end items-end bg-white border-l-4 border-dgreen p-4 pl-6 mb-4 repo-panel">
                                     <div class="w-11/12">
                                         <h3 class="font-serif font-semibold text-2xl lg:text-3xl">Letter to Buckthorn</h3>
