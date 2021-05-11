@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @php
 $post = get_post(517);
-
 @endphp
-
 
 @section('content')
   <main class="site-content text-grey text-lg"  >

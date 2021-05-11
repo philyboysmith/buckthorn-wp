@@ -1,8 +1,6 @@
 <?php
-$post = get_post(6);
-
+$post = get_post(517);
 ?>
-
 
 <?php $__env->startSection('content'); ?>
   <main class="site-content text-grey text-lg"  >
