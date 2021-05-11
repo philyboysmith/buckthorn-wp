@@ -1,3 +1,9 @@
+<?php
+$post = get_post(6);
+
+?>
+
+
 <?php $__env->startSection('content'); ?>
   <main class="site-content text-grey text-lg"  >
 
@@ -8,7 +14,8 @@
                     <div class="w-full pl-6 border-l-4 border-blue">
 
                         <div class="prose">
-                      <?php get_the_content(517) ?>
+                      <?php echo $post->post_content; ?>
+
                         </div>
                     </div>
                 </div>
