@@ -59,6 +59,41 @@
     </div>
     </div>
 </main>
+
+
+<div id="myModal" class="white-popup mfp-hide">
+        <div class="p-4 md:p-12">
+        <div class="w-full border-l-4 border-blue pl-4 md:pl-12">
+        <div class="prose">
+                                        <?php echo e(the_field('disclaimer')); ?>
+
+                                        <button class="arrow-link font-bold text-grey pr-3 mt-4" onclick="window.approved()">I have read and understood the above conditions</button>
+                                        </div>
+        </div>
+        </div>
+    </div>
+
+    <?php if($_COOKIE['disclaimer'] != '1') { ?>
+<script>
+
+function approved() {
+    var theDate = new Date();
+    var oneYearLater = new Date( theDate.getTime() + 31536000000 );
+    window.document.cookie = "disclaimer=1; expires=" + oneYearLater + "; path=/";
+    jQuery.magnificPopup.close();
+}
+jQuery(document).ready(function ($) {
+console.log('gdfgdf')
+$.magnificPopup.open({
+    items: {
+        src: '#myModal'
+    },
+    showCloseBtn:false,
+    type: 'inline'
+      });
+    });
+    </script>
+    <?php } ?>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
