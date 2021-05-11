@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@php
+$post = get_post(517);
+
+@endphp
+
 
 @section('content')
   <main class="site-content text-grey text-lg"  >
@@ -10,7 +15,7 @@
                     <div class="w-full pl-6 border-l-4 border-blue">
 
                         <div class="prose">
-                      @php get_the_content(517) @endphp
+                      {!! $post->post_content !!}
                         </div>
                     </div>
                 </div>
