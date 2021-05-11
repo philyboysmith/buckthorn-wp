@@ -1,14 +1,19 @@
 <?php $__env->startSection('content'); ?>
-  <?php echo $__env->make('partials.page-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <main class="site-content text-grey text-lg"  >
 
-  <?php if(!have_posts()): ?>
-    <div class="alert alert-warning">
-      <?php echo e(__('Sorry, but the page you were trying to view does not exist.', 'sage')); ?>
+            <div class="white-opacity-strip">
+            </div>
+            <div class="mx-auto max-w-screen-2xl p-6 py-12 mb-12 md:text-lg bg-white-trans">
+                <div class="flex flex-wrap">
+                    <div class="w-full pl-6 border-l-4 border-blue">
 
-    </div>
-    <?php echo get_search_form(false); ?>
-
-  <?php endif; ?>
+                        <div class="prose">
+                      <?php get_the_content(517) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
