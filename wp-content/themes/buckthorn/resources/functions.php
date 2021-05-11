@@ -108,3 +108,32 @@ Container::getInstance()
             }
        }
         add_shortcode('analytics_checkbox', 'analytics_checkbox_function');
+
+
+        // ACF upload prefilter
+function gist_acf_upload_dir_prefilter($errors, $file, $field) {
+
+    // Only allow editors and admins, change capability as you see fit
+    if( !current_user_can('edit_pages') ) {
+        $errors[] = 'Only Editors and Administrators may upload attachments';
+    }
+
+    // This filter changes directory just for item being uploaded
+    add_filter('upload_dir', 'gist_acf_upload_dir');
+
+}
+
+// ACF hook, set to field key of your file upload field
+add_filter('acf/upload_prefilter/key=field_60990c39e530e', 'gist_acf_upload_dir_prefilter', 10, 3 );
+
+// Custom upload directory
+function gist_acf_upload_dir($param) {
+
+    // Set to whatever directory you want the ACF file field to upload to
+    $custom_dir = '/uploads/documents';
+    $param['path'] = WP_CONTENT_DIR . $custom_dir;
+    $param['url'] = WP_CONTENT_URL . $custom_dir;
+
+    return $param;
+
+}
