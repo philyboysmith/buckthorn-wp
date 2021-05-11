@@ -24,11 +24,11 @@
                             <div class="w-full flex justify-end items-end bg-white border-l-4 border-dgreen p-4 pl-6 mb-4 repo-panel relative">
                             <a class="absolute inset-0 z-10" href="{{the_field('file')}}">&nbsp;</a>
                                 <div class="w-11/12">
-                                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl">Letter to Buckthorn</h3>
+                                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl">{!! get_the_title() !!}</h3>
                                     <div class="font-semibold text-sm">
-                                        <p class="mb-1">Wednesday, 14 July 2021</p>
+                                        <p class="mb-1"><time class="inline-block updated" datetime="{{ get_post_time('c', true) }}" >{{ get_the_date() }}</time></p>
                                     </div>
-                                    <p class="mb-0">Letter from a company to Buckthorn following Q2 proﬁt upgrade,maintaining request for Adverse Recommendation Change.</p>
+                                    <p class="mb-0">{!! get_the_content() !!}</p>
                                 </div>
                                 <div class="w-1/12"><img alt="" src="/assets/images/icon-pdf-dgreen.svg"></div>
                             </div>
