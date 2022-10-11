@@ -1,0 +1,2 @@
+/* 1620051734 || Mon, 03 May 2021 14:22:14 +0000 */ var eb_ese_site_js_data=[];
+eb_ese_site_js_data[ eb_ese_site_js_data.length ]=[{name:"Pages",post_type:"page"},{id:3,ten:"Privacy Policy",slug:"",sku:""},{id:6,ten:"Home",slug:"",sku:""},{id:8,ten:"About us",slug:"",sku:""},{id:10,ten:"Our Companies",slug:"",sku:""},{id:12,ten:"ESG",slug:"",sku:""},{id:14,ten:"Our Team",slug:"",sku:""},{id:16,ten:"Contact",slug:"",sku:""},{id:18,ten:"Document Repository",slug:"",sku:""},{id:413,ten:"Cookie policy and control",slug:"",sku:""}];
