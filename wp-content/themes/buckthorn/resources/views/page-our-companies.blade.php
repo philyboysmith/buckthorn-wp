@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="w-full lg:w-7/12 lg:pl-6 md:text-lg">
+                    <div class="w-full lg:w-7/12 lg:pl-6 md:text-lg flex flex-col justify-between">
                     <div class="grid md:grid-cols-2 gap-4 text-white font-semibold">
                             @php ($i = 0)
                             @while ( have_rows('company') ) @php (the_row())
