@@ -6,7 +6,7 @@
 * Plugin Facebook page: https://www.facebook.com/webgiare.org
 * Author: Dao Quoc Dai
 * Author URI: https://www.facebook.com/ech.bay/
-* Version: 1.1.5
+* Version: 1.1.6
 * Text Domain: webgiareorg
 * Domain Path: /languages/
 * License: GPLv2 or later
@@ -14,7 +14,7 @@
 if ( !defined( 'ABSPATH' ) ) {
 exit();
 }
-define( 'ESE_DF_VERSION', '1.1.5' );
+define( 'ESE_DF_VERSION', '1.1.6' );
 define( 'ESE_DF_DIR', dirname( __FILE__ ) . '/' );
 define( 'ESE_THIS_PLUGIN_NAME', 'EchBay Search Everything' );
 if ( !defined( 'EBP_GLOBAL_PLUGINS_SLUG_NAME' ) ) {
@@ -695,7 +695,7 @@ $ESE_func = new ESE_Actions_Module();
 $ESE_func->load();
 if ( is_admin() ) {
 add_action( 'admin_menu', 'ESE_add_menu_setting_to_admin_menu' );
-if ( strstr( $_SERVER[ 'REQUEST_URI' ], 'plugins.php' ) == true ) {
+if ( strpos( $_SERVER[ 'REQUEST_URI' ], '/plugins.php' ) !== false ) {
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'ESE_plugin_settings_link' );
 }

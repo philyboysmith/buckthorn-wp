@@ -22,11 +22,12 @@
                 <div class="m-auto max-w-screen-2xl p-4 pt-12 leading-snug ">
                     <div class="mb-2">
                         <div class="w-full max-w-5xl md:flex homepage-block">
-
+<?php ($i = 0); ?>
                         <?php while(have_rows('blocks')): ?> <?php (the_row()); ?>
+<?php ($i++); ?>
 
                             <div class="w-full md:flex md:w-1/3 mb-4 relative">
-                                <a href="<?php echo e(get_sub_field('link')); ?>" class="absolute inset-0"></a>
+                                <a href="<?php echo e(get_sub_field('link')); ?>" class="absolute inset-0 z-10"></a>
                                 <div class="<?php if(get_sub_field('image') ): ?> flex <?php endif; ?> flex-1 bg-white pl-4 mr-4 border-l-4 border-<?php echo e(the_sub_field('colour')); ?>">
                                     <h3 class="w-2/3 text-lg leading-snug font-medium  p-2 ">
                                         <?php echo e(the_sub_field('title')); ?>
@@ -41,10 +42,18 @@
                                         <?php echo e(the_sub_field('body')); ?>
 
                                     </p>
-                                    <?php if(!get_sub_field('image') ): ?>
+                                    <?php if($i === 1): ?>
                                     <div class=" px-2 pb-2 flex items-center">
                                         <span class="arrow-link font-bold text-grey pr-3" >
                                             Find out how
+                                        </span>
+                                    </div>
+                                    <?php endif; ?>
+
+<?php if($i === 2 ): ?>
+                                    <div class=" px-2 pb-1 absolute bottom-1 left-6">
+                                        <span class="arrow-link font-bold text-grey pr-3" >
+                                            Find out more
                                         </span>
                                     </div>
                                     <?php endif; ?>

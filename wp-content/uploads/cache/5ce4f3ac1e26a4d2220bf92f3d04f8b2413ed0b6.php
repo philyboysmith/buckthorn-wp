@@ -22,7 +22,9 @@
                             <div class="w-full lg:w-9/12">
                                 <div class="grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6">
                                 <?php while( have_rows('image') ): ?> <?php (the_row()); ?>
+<?php if(get_sub_field('biog')): ?>
                                     <div class="team-thumb bg-white group overflow-hidden">
+
                                         <a class="open-popup-link" href="#team-<?php echo e(sanitize_title(get_sub_field('name'))); ?>"><div class="overflow-hidden"><img alt="" src="<?php echo e(get_sub_field('headshot')); ?>" class="hover:scale-110 transform transition duration-400"></div>
                                         <div class="text-blue px-3 py-2 bg-white team-thumb-content">
                                             <div class="pl-3 border-l-2 leading-snug" style="border-color: currentColor">
@@ -31,6 +33,21 @@
                                             </div>
                                         </div></a>
                                     </div>
+
+<?php else: ?>
+
+<div class="bg-white overflow-hidden">
+
+                                        <div class="overflow-hidden"><img alt="" src="<?php echo e(get_sub_field('headshot')); ?>" class="hover:scale-110 transform transition duration-400"></div>
+                                        <div class="text-blue px-3 py-2 bg-white team-thumb-content">
+                                            <div class="pl-3 border-l-2 leading-snug" style="border-color: currentColor">
+                                                <h3 class="font-serif text-lg leading-none mb-0 font-semibold"><?php echo e(get_sub_field('name')); ?></h3>
+                                                <p class="text-xs mb-0"><?php echo e(get_sub_field('job_title')); ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+<?php endif; ?>
                                 <?php endwhile; ?>
                                 </div>
                             </div>

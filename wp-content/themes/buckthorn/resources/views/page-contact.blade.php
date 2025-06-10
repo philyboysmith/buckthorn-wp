@@ -34,6 +34,17 @@
                                                 <p><a href="mailto:{{ the_field('email')}}" class="hover:text-green">{{ the_field('email')}}</a></p>
                                             </div>
                                         </div>
+                                        <!-- <div class="w-full mb-6">
+                                            <h5 class="mb-2"><strong>For media contacts</strong></h5>
+                                            <div class="flex contact-icon contact-phone">
+                                                <span></span>
+                                                <p>+44 (0)7834 335 677</p>
+                                            </div>
+                                            <div class="flex contact-icon contact-email">
+                                                <span class="flex-shrink-0"></span>
+                                                <p><a href="mailto:buckthornpartners@grayling.com" class="hover:text-green">buckthornpartners@grayling.com</a></p>
+                                            </div>
+                                        </div> -->
                                     </div>
                                     <div class="w-full mb-12 lg:mb-0 lg:w-7/12">
                                     <a href="{{ the_field('map_link_url')}}" target="_blank">

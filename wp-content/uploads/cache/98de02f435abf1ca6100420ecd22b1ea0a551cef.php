@@ -12,14 +12,14 @@
                 <div class="mb-12 lg:mb-0">
 
                     <div class="lg:flex items-start">
-                        <div class="w-full text-lg lg:w-full mb-12 lg:mb-0 lg:pr-24">
+                        <div class="w-full text-lg lg:w-full mb-12 lg:mb-0 lg:pr-24 relative">
                             <?php while(have_posts()): ?> <?php the_post() ?>
                             <div class="w-full bg-white border-l-4 border-dgreen p-4 pl-6 mb-4 repo-panel relative">
                             <a class="absolute inset-0 z-10" href="<?php echo e(the_field('file')); ?>">&nbsp;</a>
-                                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl"><?php echo get_the_title(); ?></h3>
+                                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl mb-2"><?php echo get_the_title(); ?></h3>
                                 <div class="w-11/12">
                                     <div class="font-semibold text-sm">
-                                        <p class="mb-1"><time class="inline-block updated" datetime="<?php echo e(get_post_time('c', true)); ?>" ><?php echo e(get_the_date()); ?></time></p>
+                                        <p class="mb-4"><time class="inline-block updated" datetime="<?php echo e(get_post_time('c', true)); ?>" ><?php echo e(get_the_date()); ?></time></p>
                                     </div>
                                     <p class="mb-0"><?php echo get_the_content(); ?></p>
                                 </div>

@@ -7,9 +7,9 @@ Author URI: https://www.facebook.com/ech.bay
 Text Domain: echbayese
 Tags: ajax search, cache search, category exclusion, category search, search, search highlight, tag search
 Requires at least: 4.8
-Tested up to: 5.7
-Stable tag: 1.1.5
-Version: 1.1.5
+Tested up to: 6.3
+Stable tag: 1.1.6
+Version: 1.1.6
 Contributors: itvn9online
 Donate link: https://paypal.me/itvn9online/5
 
@@ -38,6 +38,9 @@ http://www.youtube.com/watch?v=5ajlkb452IU
 2. Search show in your site.
 
 == Changelog ==
+
+= Version 1.1.6 =
+* fixed off function in jQuery
 
 = Version 1.1.5 =
 * fixed empty array

@@ -1,25 +1,25 @@
 === 301 Redirects - Easy Redirect Manager ===
 Contributors: WebFactory
-Tags: 301 redirect, redirects, redirect, 404 error log, redirection, 302 redirect, 302, seo, 302 redirect, 404, 404 redirect, 301, 307, 404 log
+Tags: 301 redirect, redirects, redirect, 404 error log, redirection, 302, seo, 302 redirect, 404, 404 redirect, 301, 307, 404 log
 Requires at least: 4.0
-Tested up to: 5.7
-Stable tag: 2.70
+Tested up to: 6.4
+Stable tag: 2.73
 Requires PHP: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily manage 301 & 302 redirects. Simple to use & validate redirects. Includes redirect stats & 404 error log.
+Manage 301 & 302 redirects. Simple redirection & redirects validation. Includes redirect stats & 404 error log.
 
 == Description ==
 
-<a href="https://wp301redirects.com/?ref=wporg">301 Redirects</a> helps you manage and create 301, 302, 307 redirects for your WordPress site to **improve SEO and visitor experience**. With a user-friendly interface, 301 Redirects is easy to use. Perfect for new sites or repairing links after reorganizing your existing WordPress content, or when your site has content that expires and you wish to avoid sending visitors to a 404 error page. Use the 404 error log to identify problematic links.
+<a href="https://wp301redirects.com/?ref=wporg">301 Redirects</a> helps you manage and create 301, 302, 307 redirects for WordPress site to **improve SEO & visitor experience**. 301 Redirects is easy to use. Perfect for new sites or repairing links after reorganizing your old content, or when your site has content that expires and you wish to avoid sending visitors to a 404 error page and want to create redirection instead. Use the 404 error log to identify problematic links.
 
 301 Redirects GUI is located in WP Admin - Settings - 301 Redirects
 404 Error Log widget can be found in the WP Admin - Dashboard
 
 **Features**
 
-* Choose from Pages, Posts, Custom Post types, Archives, and Term Archives from dropdown menu
+* Choose from Pages, Posts, Custom Post types, Archives, and Term Archives from dropdown menu to create redirection
 * Or, set a custom destination URL!
 * Retain query strings across redirects
 * Super-fast redirection
@@ -30,7 +30,7 @@ Easily manage 301 & 302 redirects. Simple to use & validate redirects. Includes 
 * Fully compatible with translation plugins (Weglot, TranslatePress, Gtranslate, Loco Translate) that use lang prefix in URL
 
 **Need more features?**
-<a href="https://wp301redirects.com/?ref=wporg">WP 301 Redirects PRO</a> offers wildcard & regular expression URL matching, auto-typo fixing in URLs, complete redirect and 404 log, and a centralized SaaS dashboard to monitor redirects on all your sites from one place.
+<a href="https://wp301redirects.com/?ref=wporg">WP 301 Redirects PRO</a> offers wildcard & regular expression URL matching, auto-typo fixing in URLs, complete redirect and 404 log, link scanner, and a centralized SaaS dashboard to monitor redirects on all your sites from one place.
 
 **What is a 301 Redirect?**
 A redirect is a simple way to re-route traffic coming to a *Requested URL* to different *Destination URL*.
@@ -40,7 +40,6 @@ A 301 redirect indicates that the page requested has been permanently moved to t
 [youtube https://www.youtube.com/watch?v=70Yn_lO_8BA]
 
 **When Should I use 301 Redirects?**
-
 * Replacing an old site design with a new site design
 * Overhauling or re-organizing your existing WordPress content
 * You have content that expires (or is otherwise no longer available) and you wish to redirect users elsewhere
@@ -48,8 +47,10 @@ A 301 redirect indicates that the page requested has been permanently moved to t
 **Is the 404 error log GDPR friendly?**
 The 404 error log does not collect user IPs. It collects the following data: timestamp of the event, the (404) URL that was opened, and the user-agent string.
 
-**External libraries used in the project**
+**Having problems with SSL? Moving a site from HTTP to HTTPS?**
+Install our free <a href="https://wordpress.org/plugins/wp-force-ssl/">WP Force SSL</a> plugin. It's a great way to enable SSL and fix SSL problems.
 
+**External libraries used in the project**
 * <a href="https://github.com/donatj/PhpUserAgent">PHP User Agent Parser</a>
 
 
@@ -69,6 +70,15 @@ The 404 error log does not collect user IPs. It collects the following data: tim
 
 == Changelog ==
 
+= 2.73 =
+* 2023/03/08
+* security fixes
+
+= 2.72 =
+* 2021/11/11
+* security fixes
+* added "Reset Redirect Hits" tool
+
 = 2.70 =
 * 2021/05/01
 * 404 error log widget is now visible only to users with manage_options permission
@@ -76,7 +86,7 @@ The 404 error log does not collect user IPs. It collects the following data: tim
 
 = 2.67 =
 * 2021/03/16
-* fixed a small security issue
+* fixed a small security issue with redirection
 
 = 2.66 =
 * 2021/02/23

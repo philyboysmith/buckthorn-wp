@@ -18,12 +18,15 @@
                         </div>
                     </div>
                 </div>
-                    <div class="w-full lg:w-7/12 lg:pl-6 md:text-lg">
+                    <div class="w-full lg:w-7/12 lg:pl-6 md:text-lg flex flex-col justify-between">
                     <div class="grid md:grid-cols-2 gap-4 text-white font-semibold">
                             @php ($i = 0)
                             @while ( have_rows('company') ) @php (the_row())
                             @php ($i++)
-                          <a  href="#company-{{$i}}-popup" class="open-popup-link  text-center p-6 flex items-end bg-white hover:text-white hover:bg-{{ the_sub_field('colour') }} company-img company-{{$i}} reveal">
+                          <a  id="company-{{$i}}" href="#company-{{$i}}-popup" class="relative open-popup-link overflow-hidden text-center p-6 flex items-end bg-white hover:text-white hover:bg-{{ the_sub_field('colour') }} company-img company-{{$i}} reveal">
+@if(get_sub_field('exited'))
+<div class="exited">Exited</div>
+@endif
                               <div class="company-content mx-auto text-sm">
                                 <p>{{ the_sub_field('description') }}</p>
                               </div>
@@ -52,7 +55,7 @@
 <span onclick="jQuery.magnificPopup.instance.next()" class=" p-2 text-lgcolor7 cursor-pointer hover:text-{{ the_sub_field('colour') }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.05 33.55" class="h-6"><g id="e31aad34-8db5-48ab-b864-8f5df91c78eb" data-name="Layer 2"><g id="a0316c41-9883-4677-9bcb-3b8cc0c7ca40" data-name="menu and footer"><path d="M2.21,33.55A2.22,2.22,0,0,1,.65,29.77L13.79,16.63.93,3.78A2.21,2.21,0,0,1,4.06.65l16,16L3.78,32.9A2.24,2.24,0,0,1,2.21,33.55Z" style="fill:currentColor"/></g></g></svg></span>
 </div>
     <div class="lg:flex">
-        <div class="w-full py-12 px-6 md:p-0 lg:w-7/12">
+        <div class="w-full py-12 px-6 md:p-0 lg:w-7/12 flex flex-col justify-between">
             <div class="pr-4 md:pt-12 md:pb-0 md:px-12">
                 <div class="mb-4">
                     <img src="{{ get_sub_field('image')['popup'] }}" alt="{{ the_sub_field('title')}}" class="h-16 md:h-auto w-auto"/>
@@ -76,16 +79,18 @@
                         @if( get_row_layout() == 'quotation' )
             <div class="md:flex bg-{{ $col }} text-white p-6 md:p-0">
                 <div class="md:flex-grow border-l-4 border-white p-4 md:my-3 md:ml-4">
-                    <div class=" mb-6"><p>{{get_sub_field('quotation')}}</p></div>
+                    <div class=" mb-6">{!!get_sub_field('quotation')!!}</p></div>
                     <div class="font-semibold font-serif">
                         <p class="leading-snug"><span class="text-3xl leading-none block">{{get_sub_field('citation')}}</span>
                         <span class="text-lg font-normal">{{get_sub_field('job_title')}}</span>
                         </p>
                    </div>
                 </div>
+@if(get_sub_field('image'))
                 <div class="block flex-none ">
                     <img src="{{get_sub_field('image')}}" alt="Allan" class="max-w-sm w-full">
                 </div>
+@endif
             </div>
             @endif
             @if( get_row_layout() == 'images' )
@@ -139,4 +144,19 @@
         });
      </script>
 
+<style>
+.exited 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 4em;
+    background: #c5c5c4;
+    transform: rotate(45deg) translate(30%, 0);
+    /* transform-origin: top right; */
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Abhaya Libre, sans-serif;
+}
 @endsection
