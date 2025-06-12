@@ -26,7 +26,7 @@ Template Name: Alice
                   <h1 class="text-4xl font-bold sticky" style="top: 150px;">{{ the_title()}}
                   </h1>
                   <div class=" text-grey">
-                    {{ get_field('intro_text')}}
+                    {!! get_field('intro_text')!!}
                   </div>
                 </div>
                 <div class="lg:w-2/3 w-full lg:pl-6 flex-1">
