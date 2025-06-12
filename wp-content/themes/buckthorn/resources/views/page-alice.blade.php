@@ -23,11 +23,16 @@ Template Name: Alice
             @if(isset($_POST['action']))
             <div class="flex flex-wrap w-full">
                 <div class="lg:w-1/3">
+<<<<<<< HEAD
                   <h1 class="text-4xl font-bold sticky" style="top: 150px;">{{ the_title()}}
                   </h1>
                   <div class=" text-grey">
                     {{ get_field('intro_text')}}
                   </div>
+=======
+                  <h1 class="text-4xl font-bold sticky" style="top: 150px;">Important Disclaimer
+                  </h1>
+>>>>>>> 9d68458171bd639ec90b9d18987261b97316467e
                 </div>
                 <div class="lg:w-2/3 w-full lg:pl-6 flex-1">
                     <div class="prose">
