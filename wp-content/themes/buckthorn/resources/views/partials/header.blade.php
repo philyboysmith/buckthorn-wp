@@ -1,10 +1,13 @@
 <header class=" p-4 md:p-4 sticky z-10 top-0 bg-white">
 <div class="m-auto w-full max-w-screen-2xl">
             <div class="flex justify-between ">
-                <div>
+                <div class="flex flex-col lg:flex-row lg:items-end gap-4">
                     <a href="/">
                         <img alt="Buckhorn Partners LLP" class="header-logo" src="/assets/images/logo.png"/>
                     </a>
+                    @if(is_page('alice'))
+                        <img src="/assets/images/one-equity.png" alt="One Equity" style="height: 40px; padding-bottom: 8px;">   
+                    @endif
                 </div>
                 <div class="flex items-end lg:block header-contact text-right">
                     <div class="md:flex md:justify-end items-end md:mb-4">
