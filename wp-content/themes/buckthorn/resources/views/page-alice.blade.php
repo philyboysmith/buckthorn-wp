@@ -23,16 +23,11 @@ Template Name: Alice
             @if(isset($_POST['action']))
             <div class="flex flex-wrap w-full">
                 <div class="lg:w-1/3">
-<<<<<<< HEAD
                   <h1 class="text-4xl font-bold sticky" style="top: 150px;">{{ the_title()}}
                   </h1>
                   <div class=" text-grey">
                     {{ get_field('intro_text')}}
                   </div>
-=======
-                  <h1 class="text-4xl font-bold sticky" style="top: 150px;">Important Disclaimer
-                  </h1>
->>>>>>> 9d68458171bd639ec90b9d18987261b97316467e
                 </div>
                 <div class="lg:w-2/3 w-full lg:pl-6 flex-1">
                     <div class="prose">
@@ -89,9 +84,9 @@ Template Name: Alice
 
                         <div class="prose">
                         @php the_content() @endphp
-                        
                         </div>
 
+                        @if(!post_password_required())
                         <form method="POST" class="mt-8 flex gap-4">
 
                             <button type="submit" name="action" value="accept" class=" bg-brand hover:bg-blue hover:text-white  text-lgcolor7 p-2 mb-3 rounded-full text-xs  uppercase border-2 border-basecolor7 w-full text-center hover:border-blue">
@@ -101,6 +96,7 @@ Template Name: Alice
                                 Decline
                             </a>
                         </form>
+                        @endif
                     </div>
                 </div>
             </div>
