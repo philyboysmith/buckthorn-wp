@@ -58,8 +58,8 @@
                                 $types = get_sub_field('type');
                                 $typesArray = is_array($types) ? $types : ($types ? [$types] : []);
                                 $typesJson = json_encode($typesArray);
+                                $isPartner = in_array('partners', $typesArray);
                             @endphp
-                            @php $isPartner = is_array($types) ? in_array('partners', $types) : $types === 'partners'; @endphp
                             @if($isPartner && get_sub_field('biog'))
                                 {{-- Partners: headshot + clickable modal --}}
                                 <div class="team-thumb bg-white group relative md:overflow-hidden"
@@ -184,7 +184,8 @@
 
         @php
             $modalTypes = get_sub_field('type');
-            $modalIsPartner = is_array($modalTypes) ? in_array('partners', $modalTypes) : $modalTypes === 'partners';
+            $modalTypesArray = is_array($modalTypes) ? $modalTypes : ($modalTypes ? [$modalTypes] : []);
+            $modalIsPartner = in_array('partners', $modalTypesArray);
         @endphp
         <div class="flex flex-col md:flex-row">
             <div class="w-full {{ $modalIsPartner ? 'md:w-1/2' : '' }} p-8 md:p-12 ">
