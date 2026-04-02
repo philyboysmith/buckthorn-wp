@@ -59,7 +59,9 @@
                                 $typesArray = is_array($types) ? $types : ($types ? [$types] : []);
                                 $typesJson = json_encode($typesArray);
                             @endphp
-                            @if(get_sub_field('biog'))
+                            @php $isPartner = is_array($types) ? in_array('partners', $types) : $types === 'partners'; @endphp
+                            @if($isPartner && get_sub_field('biog'))
+                                {{-- Partners: headshot + clickable modal --}}
                                 <div class="team-thumb bg-white group relative md:overflow-hidden"
                                     x-data="{ memberTypes: {{ $typesJson }} }"
                                     x-show="activeFilter === 'all' || memberTypes.includes(activeFilter)" x-transition>
@@ -93,8 +95,33 @@
                                     </a>
                                 </div>
 
-                            @else
+                            @elseif(get_sub_field('biog'))
+                                {{-- Non-partners with bio: no headshot, but clickable for modal --}}
+                                <div class="team-thumb bg-white overflow-hidden relative flex items-end"
+                                    x-data="{ memberTypes: {{ $typesJson }} }"
+                                    x-show="activeFilter === 'all' || memberTypes.includes(activeFilter)" x-transition>
+                                    <a class="open-popup-link block w-full px-3 py-4"
+                                        href="#team-{{ sanitize_title(get_sub_field('name')) }}">
+                                        <div class="pl-3 border-l-2 border-dgreen leading-snug flex items-center group">
+                                            <div class="flex-1">
+                                                <h3 class="font-serif text-lg leading-none mb-0 font-semibold text-black">
+                                                    {{get_sub_field('name')}}
+                                                </h3>
+                                                <p class="text-xs mb-0 text-gray-500">{{get_sub_field('job_title')}}</p>
+                                            </div>
+                                            <div class="group-hover:opacity-100 opacity-0 transition-all duration-300 text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.05 33.55" class="h-6">
+                                                    <g data-name="Layer 2"><g data-name="menu and footer">
+                                                        <path d="M2.21,33.55A2.22,2.22,0,0,1,.65,29.77L13.79,16.63.93,3.78A2.21,2.21,0,0,1,4.06.65l16,16L3.78,32.9A2.24,2.24,0,0,1,2.21,33.55Z" style="fill:currentColor" />
+                                                    </g></g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
+                            @else
+                                {{-- No bio: just name and title --}}
                                 <div class="bg-white overflow-hidden relative flex items-end" x-data="{ memberTypes: {{ $typesJson }} }"
                                     x-show="activeFilter === 'all' || memberTypes.includes(activeFilter)" x-transition>
                                     <div class="px-3 py-4 w-full">
@@ -155,8 +182,12 @@
                 </svg></span>
         </div>
 
+        @php
+            $modalTypes = get_sub_field('type');
+            $modalIsPartner = is_array($modalTypes) ? in_array('partners', $modalTypes) : $modalTypes === 'partners';
+        @endphp
         <div class="flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 p-8 md:p-12 ">
+            <div class="w-full {{ $modalIsPartner ? 'md:w-1/2' : '' }} p-8 md:p-12 ">
                 <div class="border-l-4 border-dgreen pl-8 team-details">
                     <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-2">{{get_sub_field('name')}}</h2>
                     <p class="text-gray-500 text-lg md:text-xl mb-6">{{get_sub_field('job_title')}}</p>
@@ -165,10 +196,12 @@
                     </div>
                 </div>
             </div>
+            @if($modalIsPartner)
             <div class="w-full md:w-1/2">
                 <img alt="{{get_sub_field('name')}}" src="{{get_sub_field('headshot')}}"
                     class="w-full h-full object-contain">
             </div>
+            @endif
         </div>
     </div>
 </div><!-- POP 1 -->
