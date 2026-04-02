@@ -100,7 +100,7 @@
                                 <div class="team-thumb bg-white overflow-hidden relative flex items-end"
                                     x-data="{ memberTypes: {{ $typesJson }} }"
                                     x-show="activeFilter === 'all' || memberTypes.includes(activeFilter)" x-transition>
-                                    <a class="open-popup-link block w-full px-3 py-4"
+                                    <a class="open-popup-link block w-full px-3 py-4 no-underline"
                                         href="#team-{{ sanitize_title(get_sub_field('name')) }}">
                                         <div class="pl-3 border-l-2 border-dgreen leading-snug flex items-center group">
                                             <div class="flex-1">
