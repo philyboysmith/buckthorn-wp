@@ -142,7 +142,7 @@
         </div>
     </div>
 </main><!-- POP 1 -->
-@while (have_rows('image')) @php(the_row())
+@while (have_rows('image')) @php the_row(); @endphp
 
 <div class="w-full mfp-hide bg-white" id="team-{{ sanitize_title(get_sub_field('name')) }}">
     <div class="relative">
