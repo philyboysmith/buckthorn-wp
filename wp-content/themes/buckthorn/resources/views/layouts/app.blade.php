@@ -8,7 +8,8 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp
-<?php if($_COOKIE['buckthorn'] == '1') { ?>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<?php if(isset($_COOKIE['buckthorn']) && $_COOKIE['buckthorn'] == '1') { ?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8G2CJPM9Q"></script>
 <script>

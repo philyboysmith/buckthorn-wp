@@ -1,19 +1,19 @@
-<footer class="w-full p-4 bg-white text-sm lg:text-xs text-grey2 uppercase xl:sticky bottom-0">
+<footer class="w-full p-4 bg-white text-sm lg:text-xs text-grey2 uppercase xl:sticky bottom-0 z-50">
             <div class="m-auto max-w-screen-2xl p-4 py-2 lg:flex justify-between items-center">
                 <div class=" sm:mb-4 lg:mb-0">
                     <p>
-                        <a href="/privacy-policy" class="inline-block footer-item">
-                            Privacy Policy
+                        <a href="/privacy-policy" class="inline-block footer-item no-underline">
+                            <span  class="underline">Privacy Policy</span>
                         </a>
-                        <a href="/cookie-policy-and-control/">
-                            Cookie Policy
+                        <a href="/cookie-policy-and-control/" class="no-underline">
+                            <span class="underline">Cookie Policy</span>
                         </a>
                     </p>
                 </div>
                 <div class=" lg:text-right flex xl:justify-end items-end">
                     <div class="mr-4">
                         <p class="mb-0">
-                            COPYRIGHT BUCKTHORN PARTNERS LLP ©2021, ALL RIGHTS RESERVED.
+                            COPYRIGHT BUCKTHORN PARTNERS LLP ©<?php echo date('Y');?>, ALL RIGHTS RESERVED.
                             <br>
                                 AUTHORISED & REGULATED BY THE FINANCIAL CONDUCT AUTHORITY.
                             </br>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </footer>
-        <?php if($_COOKIE['buckthorn'] == null) { ?>
+        <?php if(!isset($_COOKIE['buckthorn']) || $_COOKIE['buckthorn'] == null) { ?>
 
 <div id="newCookieNotice" class="fixed bottom-0 left-0 right-0 shadow-md bg-indigo-dark  z-20 py-6 bg-white" style="min-height: 60px" >
 	<div class="container mx-auto p-3 md:flex">
@@ -79,7 +79,7 @@ function rejectAll() {
     jQuery("#newCookieNotice").fadeOut();
 }
 
-<?php if($_COOKIE['buckthorn'] != '1') { ?>
+<?php if(!isset($_COOKIE['buckthorn']) || $_COOKIE['buckthorn'] != '1') { ?>
 
 jQuery('#toggleCookies').on('click', function(){
 	window.acceptAll();
