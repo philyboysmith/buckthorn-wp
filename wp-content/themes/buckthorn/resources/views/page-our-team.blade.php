@@ -96,10 +96,15 @@
                                 </div>
 
                             @else
-                                {{-- No bio: just name and title --}}
-                                <div class="bg-white overflow-hidden relative flex items-end" x-data="{ memberTypes: {{ $typesJson }} }"
+                                {{-- No bio: headshot (no click) + name and title --}}
+                                <div class="bg-white overflow-hidden relative" x-data="{ memberTypes: {{ $typesJson }} }"
                                     x-show="activeFilter === 'all' || memberTypes.includes(activeFilter)" x-transition>
-                                    <div class="px-3 py-4 w-full">
+                                    @if(get_sub_field('headshot'))
+                                    <div class="overflow-hidden">
+                                        <img alt="" src="{{get_sub_field('headshot')}}" class="w-full h-full object-cover">
+                                    </div>
+                                    @endif
+                                    <div class="px-3 py-2 bg-white absolute bottom-0 left-0 right-0">
                                         <div class="pl-3 border-l-2 border-dgreen leading-snug">
                                             <h3 class="font-serif text-lg leading-none mb-0 font-semibold text-black">
                                                 {{get_sub_field('name')}}
